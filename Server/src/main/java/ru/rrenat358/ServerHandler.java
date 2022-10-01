@@ -20,7 +20,7 @@ public class ServerHandler extends SimpleChannelInboundHandler<Command> {
         System.out.println("command = " + command);
         if (command.getCommand().equals("put")) {
 
-            Path root = Path.of("Lesson03-Netty/Server/DataUser");
+            Path root = Path.of("Server/DataUser");
             Files.createDirectories(root);
             Path filePath = root.resolve(command.getFile().getPath());
             System.out.println("Файл получен и будет сохранён: \n" + filePath);

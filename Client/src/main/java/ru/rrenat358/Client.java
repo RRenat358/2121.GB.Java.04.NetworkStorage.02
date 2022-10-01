@@ -23,7 +23,7 @@ public class Client {
     private static final String HOST = "localhost";
     private static final int PORT = 13581;
 
-    private static final String clientDataUserPath = "Lesson03-Netty/Client/DataUser/";
+    private static final String clientDataUserPath = "Client/DataUser/";
     private static final String fileName01 = "userFile01.txt";
 
 
