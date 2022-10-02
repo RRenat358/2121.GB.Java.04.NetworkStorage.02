@@ -1,4 +1,20 @@
-# 2121.GB.Java.04.NetworkStorage.02
+
+# Network Storage
+
+Repo #  
+2121.GB.Java.04.NetworkStorage.02
 
 
-Network Storage
+
+---
+- Организована передача файла в фоновом режиме.  
+- Использовалось Netty.
+---
+
+
+
+\
+\
+\
+\
+\
