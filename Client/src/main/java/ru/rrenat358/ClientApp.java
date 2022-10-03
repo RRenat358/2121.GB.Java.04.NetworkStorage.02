@@ -3,6 +3,7 @@ package ru.rrenat358;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import lombok.Getter;
@@ -18,10 +19,11 @@ public class ClientApp extends Application {
         this.clientStage = stage;
 
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(MainWindow.class.getResource("mainWindow.fxml"));
+        fxmlLoader.setLocation(ClientApp.class.getResource("/mainWindow.fxml"));
 
-        Scene scene = new Scene(fxmlLoader.load(), 640, 480);
-        clientStage.setScene(scene);
+//        Scene scene = new Scene(fxmlLoader.load(), 640, 480);
+        Parent scene = fxmlLoader.load();
+        clientStage.setScene(new Scene(scene, 640, 480));
 
 
         clientStage.show();
