@@ -22,10 +22,13 @@ public class ClientApp extends Application {
 
         Scene scene = new Scene(fxmlLoader.load(), 640, 480);
         clientStage.setScene(scene);
+
+
         clientStage.show();
+    }
 
-
-
+    public static void main(String[] args) {
+        launch();
     }
 
 
