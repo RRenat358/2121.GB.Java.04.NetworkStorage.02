@@ -41,6 +41,7 @@ public class Client {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
+/*
         File file = new File(clientDataUserPath + fileName01);
         System.out.println("Файл захвачен для отправки: \n" + file.getPath());
 
@@ -49,7 +50,9 @@ public class Client {
         new Client("localhost", 13581).sendCommand(command, (respons) -> {
             System.out.println("respons = " + respons);
         });
+*/
 
+/*
         while (true) {
             Scanner scanner = new Scanner(System.in);
             if (scanner.nextLine().equals("s")) {
@@ -59,6 +62,23 @@ public class Client {
                 System.out.println("sss");
             }
         }
+*/
+
+
+
+    }
+
+    public void sendFile() throws InterruptedException, IOException {
+        File file = new File(clientDataUserPath + fileName01);
+        System.out.println("Файл захвачен для отправки: \n" + file.getPath());
+
+        Command command = new Command("put", file, Files.readAllBytes(file.toPath()));
+
+        new Client("localhost", 13581).sendCommand(command, (respons) -> {
+            System.out.println("respons = " + respons);
+        });
+
+
 
     }
 

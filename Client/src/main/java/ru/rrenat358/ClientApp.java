@@ -8,7 +8,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import lombok.Getter;
 
+
 public class ClientApp extends Application {
+
+
 
     @Getter
     private Stage clientStage;
@@ -20,7 +23,6 @@ public class ClientApp extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(ClientApp.class.getResource("/ru.rrenat358/mainWindow.fxml"));
 
-//        Scene scene = new Scene(fxmlLoader.load(), 640, 480);
         Parent scene = fxmlLoader.load();
         clientStage.setScene(new Scene(scene, 640, 480));
 
