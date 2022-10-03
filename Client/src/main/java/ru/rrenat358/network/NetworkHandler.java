@@ -1,20 +1,21 @@
-package ru.rrenat358;
+package ru.rrenat358.network;
 
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
+import ru.rrenat358.Command;
 
 import java.util.function.Consumer;
 
-public class ClientHandler extends SimpleChannelInboundHandler<String> {
+public class NetworkHandler extends SimpleChannelInboundHandler<String> {
 
     private Command command;
     private Consumer<String> callback;
 
-    public ClientHandler() {
+    public NetworkHandler() {
     }
 
-    public ClientHandler(Command command, Consumer<String> callback) {
+    public NetworkHandler(Command command, Consumer<String> callback) {
         this.command = command;
         this.callback = callback;
     }

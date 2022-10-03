@@ -9,7 +9,7 @@
    <children>
       <HBox prefHeight="400.0" prefWidth="200.0">
          <children>
-            <Button fx:id="sendButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#sendButton" text="▶" />
+            <Button fx:id="sendButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#sendButton" text="sendButton.sendFile() >>▶" />
          </children>
       </HBox>
    </children>
