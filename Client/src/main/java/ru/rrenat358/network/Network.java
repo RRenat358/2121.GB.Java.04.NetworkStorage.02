@@ -8,6 +8,7 @@ import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 import io.netty.handler.codec.string.StringDecoder;
 import ru.rrenat358.Command;
+import ru.rrenat358.ConfigConst;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,10 +19,10 @@ import java.util.function.Consumer;
 
 public class Network {
 
-    private static final String HOST = "localhost";
-    private static final int PORT = 13581;
+    private static final String HOST = ConfigConst.HOST;
+    private static final int PORT = ConfigConst.PORT;
 
-    private static final String clientDataUserPath = "Client/DataUser/";
+    private static final String clientDataUserPath = ConfigConst.CLIENT_REPO;
     private static final String fileName01 = "userFile01.txt";
 
 
@@ -44,7 +45,7 @@ public class Network {
 
         Command command = new Command("put", file, Files.readAllBytes(file.toPath()));
 
-        new Network("localhost", 13581).sendCommand(command, (respons) -> {
+        new Network(HOST, PORT).sendCommand(command, (respons) -> {
             System.out.println("respons = " + respons);
         });
 
@@ -70,7 +71,7 @@ public class Network {
                     );
                 }
             });
-            ChannelFuture future = client.connect(host, port).sync();
+            ChannelFuture future = client.connect(HOST, PORT).sync();
             future.channel().closeFuture().sync();
         } finally {
             workerGroup.shutdownGracefully();

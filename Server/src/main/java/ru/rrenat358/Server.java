@@ -14,9 +14,12 @@ import java.nio.charset.StandardCharsets;
 
 public class Server {
 
-    private static final String HOST = "localhost";
-    private static final int PORT = 13581;
-    private static final String clientDataUserPath = "Client/DataUser/";
+//    private static final String HOST = "localhost";
+//    private static final int PORT = 13581;
+    private static final String HOST = ConfigConst.HOST;
+    private static final int PORT = ConfigConst.PORT;
+
+    private static final String clientDataUserPath = ConfigConst.CLIENT_REPO;
 
     private static final int MAX_OBJECT_SIZE = 1024 * 1024 * 100;
 
@@ -25,7 +28,7 @@ public class Server {
     private final int port;
 
     public static void main(String[] args) throws InterruptedException {
-        new Server(13581).startServer();
+        new Server(PORT).startServer();
     }
 
     public Server() {
@@ -62,7 +65,7 @@ public class Server {
                     );
                 }
             });
-            ChannelFuture channelFuture = server.bind(port).sync();
+            ChannelFuture channelFuture = server.bind(PORT).sync();
             channelFuture.channel().closeFuture().sync();
         } finally {
             workGroup.shutdownGracefully();

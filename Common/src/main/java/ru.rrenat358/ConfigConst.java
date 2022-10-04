@@ -4,10 +4,13 @@ package ru.rrenat358;
 
 public class ConfigConst {
 
+    private ConfigConst() { // Prevents instantiation
+    }
+
     //Common
     public static final String HOST = "localhost";
 
-    public static final int PORT = 68461;
+    public static final int PORT = 13581;
 
 
 
