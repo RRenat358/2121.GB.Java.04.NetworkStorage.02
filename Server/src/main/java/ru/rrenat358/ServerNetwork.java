@@ -12,31 +12,34 @@ import io.netty.handler.codec.string.StringEncoder;
 import java.nio.charset.StandardCharsets;
 
 
-public class Server {
+public class ServerNetwork {
 
-    private static final String HOST = "localhost";
-    private static final int PORT = 13581;
-    private static final String clientDataUserPath = "Client/DataUser/";
+//    private static final String HOST = "localhost";
+//    private static final int PORT = 13581;
+    private static final String HOST = ConfigConst.HOST;
+    private static final int PORT = ConfigConst.PORT;
 
-    private static final int MAX_OBJECT_SIZE = 1024 * 1024 * 100;
+    private static final String clientDataUserPath = ConfigConst.CLIENT_REPO;
+
+    private static final int MAX_OBJECT_SIZE = ConfigConst.MAXIMUM_OBJECT_SIZE;
 
 
     private String host;
     private final int port;
 
     public static void main(String[] args) throws InterruptedException {
-        new Server(13581).startServer();
+        new ServerNetwork(PORT).startServer();
     }
 
-    public Server() {
+    public ServerNetwork() {
         this(HOST, PORT);
     }
 
-    public Server(int port) {
+    public ServerNetwork(int port) {
         this.port = port;
     }
 
-    public Server(String host, int port) {
+    public ServerNetwork(String host, int port) {
         this.host = host;
         this.port = port;
     }
@@ -58,11 +61,11 @@ public class Server {
                     channel.pipeline().addLast(
                             new StringEncoder(StandardCharsets.UTF_8),
                             new ObjectDecoder(MAX_OBJECT_SIZE, ClassResolvers.cacheDisabled(null)),
-                            new ServerHandler()
+                            new ServerNetworkHandler()
                     );
                 }
             });
-            ChannelFuture channelFuture = server.bind(port).sync();
+            ChannelFuture channelFuture = server.bind(PORT).sync();
             channelFuture.channel().closeFuture().sync();
         } finally {
             workGroup.shutdownGracefully();

@@ -6,13 +6,14 @@ import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class ServerHandler extends SimpleChannelInboundHandler<Command> {
+public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
+
+    private static final String serverDataUserPath = ConfigConst.SERVER_REPO;
 
 
     @Override
@@ -20,7 +21,7 @@ public class ServerHandler extends SimpleChannelInboundHandler<Command> {
         System.out.println("command = " + command);
         if (command.getCommand().equals("put")) {
 
-            Path root = Path.of("Server/DataUser");
+            Path root = Path.of(serverDataUserPath);
             Files.createDirectories(root);
             Path filePath = root.resolve(command.getFile().getPath());
             System.out.println("Файл получен и будет сохранён: \n" + filePath);
