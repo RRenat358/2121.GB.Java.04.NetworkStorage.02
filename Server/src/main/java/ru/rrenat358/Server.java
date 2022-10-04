@@ -21,7 +21,7 @@ public class Server {
 
     private static final String clientDataUserPath = ConfigConst.CLIENT_REPO;
 
-    private static final int MAX_OBJECT_SIZE = 1024 * 1024 * 100;
+    private static final int MAX_OBJECT_SIZE = ConfigConst.MAXIMUM_OBJECT_SIZE;
 
 
     private String host;
