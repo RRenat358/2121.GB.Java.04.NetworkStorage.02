@@ -16,7 +16,8 @@
    </children>
 -->
 
-   <VBox fx:id="cloudPane" alignment="CENTER" <!--visible="false"-->>
+<!--   <VBox fx:id="cloudPane" alignment="CENTER" visible="false">-->
+   <VBox fx:id="cloudPane" alignment="CENTER" >
       <HBox>
          <TextField fx:id="pathField" editable="FALSE" HBox.hgrow="ALWAYS" />
 <!--         <Button text="Path up" onAction="#pathUpAction"/>-->
