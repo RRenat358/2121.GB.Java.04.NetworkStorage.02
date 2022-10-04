@@ -21,7 +21,8 @@ public class ConfigConst {
 
 
     //Server
-    public static String SERVER_REPO = "Client/DataUser/";
+    public static String SERVER_REPO = "Server/DataUser/";
+
 
     public static final int MAXIMUM_OBJECT_SIZE = 1024 * 1024 * 10;
 
