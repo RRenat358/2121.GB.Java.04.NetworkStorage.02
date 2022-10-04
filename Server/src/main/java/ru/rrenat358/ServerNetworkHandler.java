@@ -6,13 +6,12 @@ import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class ServerHandler extends SimpleChannelInboundHandler<Command> {
+public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
 
     private static final String serverDataUserPath = ConfigConst.SERVER_REPO;
 

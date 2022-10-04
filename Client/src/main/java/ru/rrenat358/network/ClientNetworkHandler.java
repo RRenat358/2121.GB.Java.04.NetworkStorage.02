@@ -7,15 +7,15 @@ import ru.rrenat358.Command;
 
 import java.util.function.Consumer;
 
-public class NetworkHandler extends SimpleChannelInboundHandler<String> {
+public class ClientNetworkHandler extends SimpleChannelInboundHandler<String> {
 
     private Command command;
     private Consumer<String> callback;
 
-    public NetworkHandler() {
+    public ClientNetworkHandler() {
     }
 
-    public NetworkHandler(Command command, Consumer<String> callback) {
+    public ClientNetworkHandler(Command command, Consumer<String> callback) {
         this.command = command;
         this.callback = callback;
     }

@@ -17,7 +17,7 @@ import java.nio.file.Files;
 import java.util.function.Consumer;
 
 
-public class Network {
+public class ClientNetwork {
 
     private static final String HOST = ConfigConst.HOST;
     private static final int PORT = ConfigConst.PORT;
@@ -29,11 +29,11 @@ public class Network {
     private final String host;
     private final int port;
 
-    public Network() {
+    public ClientNetwork() {
         this(HOST, PORT);
     }
 
-    public Network(String host, int port) {
+    public ClientNetwork(String host, int port) {
         this.host = host;
         this.port = port;
     }
@@ -45,7 +45,7 @@ public class Network {
 
         Command command = new Command("put", file, Files.readAllBytes(file.toPath()));
 
-        new Network(HOST, PORT).sendCommand(command, (respons) -> {
+        new ClientNetwork(HOST, PORT).sendCommand(command, (respons) -> {
             System.out.println("respons = " + respons);
         });
 
@@ -67,7 +67,7 @@ public class Network {
                             new ObjectEncoder(),
                             new LineBasedFrameDecoder(80),
                             new StringDecoder(StandardCharsets.UTF_8),
-                            new NetworkHandler(command, callback)
+                            new ClientNetworkHandler(command, callback)
                     );
                 }
             });
