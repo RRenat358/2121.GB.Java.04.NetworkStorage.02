@@ -1,4 +1,4 @@
-package ru.rrenat358;
+package ru.rrenat358.network;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
@@ -7,18 +7,16 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 import io.netty.handler.codec.string.StringDecoder;
+import ru.rrenat358.Command;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Scanner;
 import java.util.function.Consumer;
 
 
-public class Client {
+public class Network {
 
     private static final String HOST = "localhost";
     private static final int PORT = 13581;
@@ -30,35 +28,25 @@ public class Client {
     private final String host;
     private final int port;
 
-    public Client() {
+    public Network() {
         this(HOST, PORT);
     }
 
-    public Client(String host, int port) {
+    public Network(String host, int port) {
         this.host = host;
         this.port = port;
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException {
 
+    public void sendFile() throws InterruptedException, IOException {
         File file = new File(clientDataUserPath + fileName01);
         System.out.println("Файл захвачен для отправки: \n" + file.getPath());
 
         Command command = new Command("put", file, Files.readAllBytes(file.toPath()));
 
-        new Client("localhost", 13581).sendCommand(command, (respons) -> {
+        new Network("localhost", 13581).sendCommand(command, (respons) -> {
             System.out.println("respons = " + respons);
         });
-
-        while (true) {
-            Scanner scanner = new Scanner(System.in);
-            if (scanner.nextLine().equals("s")) {
-                new Client("localhost", 13581).sendCommand(command, (response) -> {
-                    System.out.println("response = " + response);
-                });
-                System.out.println("sss");
-            }
-        }
 
     }
 
@@ -78,7 +66,7 @@ public class Client {
                             new ObjectEncoder(),
                             new LineBasedFrameDecoder(80),
                             new StringDecoder(StandardCharsets.UTF_8),
-                            new ClientHandler(command, callback)
+                            new NetworkHandler(command, callback)
                     );
                 }
             });
