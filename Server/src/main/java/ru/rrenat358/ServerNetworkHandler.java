@@ -6,6 +6,7 @@ import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
@@ -38,6 +39,10 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
                 throw new RuntimeException(e);
             }
             Files.write(filePath, command.getData());
+
+            String dir = filePath.getFileName().toString();
+            updateFileList(dir);
+
         }
         ChannelFuture channelFuture = channelHandlerContext.writeAndFlush(
                 String.format("Server: Файл получен: \n%s", command.getFile().getName())
@@ -45,6 +50,9 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
         );
         System.out.println("Файл сохранён: \n" + command.getFile().getName());
         channelFuture.addListener(ChannelFutureListener.CLOSE);
+
+//        System.out.println(list.stream().forEach());
+        list.forEach(System.out::println);
     }
 
 
@@ -53,6 +61,18 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
         System.out.println("ServerHandler exception");
         cause.printStackTrace();
         ctx.close();
+    }
+
+    private void updateFileList(String dir) {
+        File file = new File(dir);
+        for (File f : file.listFiles()) {
+            if (f.isDirectory()) {
+//                continue;
+            }
+            System.out.println(f.getName());
+            list.add(f.getName());
+        }
+
     }
 
 
