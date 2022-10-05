@@ -11,13 +11,14 @@ import java.io.IOException;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
 
     private static final String serverDataUserPath = ConfigConst.SERVER_REPO;
 
-    private List<String> list;
+    private List<String> list = new ArrayList<>();
 
 
     @Override
@@ -40,7 +41,10 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
             }
             Files.write(filePath, command.getData());
 
-            String dir = filePath.getFileName().toString();
+//            Files.walkFileTree(filePath,);
+
+
+            String dir = String.valueOf(filePath.getParent());
             updateFileList(dir);
 
         }
@@ -64,16 +68,32 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
     }
 
     private void updateFileList(String dir) {
+
+        System.out.println(dir);
+//        String dir = filePath.getFileName().toString();
+
         File file = new File(dir);
         for (File f : file.listFiles()) {
-            if (f.isDirectory()) {
-//                continue;
-            }
             System.out.println(f.getName());
             list.add(f.getName());
         }
 
     }
+
+    final File folder = new File("/home/you/Desktop");
+//    listFilesForFolder(folder);
+
+    public void listFilesForFolder(final File folder) {
+        for (final File fileEntry : folder.listFiles()) {
+            if (fileEntry.isDirectory()) {
+                listFilesForFolder(fileEntry);
+            } else {
+                System.out.println(fileEntry.getName());
+            }
+        }
+    }
+
+
 
 
 }
