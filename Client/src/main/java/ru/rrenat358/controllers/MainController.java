@@ -10,7 +10,7 @@ import ru.rrenat358.network.ClientNetwork;
 
 import java.io.IOException;
 
-public class MainWindow {
+public class MainController {
 
     @FXML
     public Button sendButton;
@@ -27,4 +27,22 @@ public class MainWindow {
 
 
     }
+
+
+
+    public TextField getPathField() {
+        return pathField;
+    }
+
+    public void setPathField(TextField pathField) {
+        this.pathField = pathField;
+    }
+
+
+
+
+
+
+
+
 }
