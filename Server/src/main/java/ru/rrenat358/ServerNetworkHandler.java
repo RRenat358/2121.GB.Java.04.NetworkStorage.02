@@ -12,6 +12,7 @@ import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
@@ -41,22 +42,32 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
             }
             Files.write(filePath, command.getData());
 
-//            Files.walkFileTree(filePath,);
-
-
             String dir = String.valueOf(filePath.getParent());
             updateFileList(dir);
 
         }
-        ChannelFuture channelFuture = channelHandlerContext.writeAndFlush(
-                String.format("Server: Файл получен: \n%s", command.getFile().getName())
+        list.forEach(System.out::println);
 
+        ChannelFuture channelFuture = channelHandlerContext.writeAndFlush(
+//                String.format("Server: Файл получен: \n%s", command.getFile().getName())
+//                String.format("Server: Файл получен: ")
+//                String.format("list.stream().iterator()")
+                "list.stream().iterator()"
         );
-        System.out.println("Файл сохранён: \n" + command.getFile().getName());
+//        System.out.println("Файл сохранён: \n" + command.getFile().getName());
         channelFuture.addListener(ChannelFutureListener.CLOSE);
 
-//        System.out.println(list.stream().forEach());
-        list.forEach(System.out::println);
+//        list.forEach(System.out::println);
+
+
+/*
+        ChannelFuture channelFuture2 = channelHandlerContext.writeAndFlush(
+                "list.forEach...."
+        );
+        channelFuture2.addListener(ChannelFutureListener.CLOSE);
+*/
+
+
     }
 
 
@@ -67,31 +78,17 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
         ctx.close();
     }
 
+
+
     private void updateFileList(String dir) {
-
-        System.out.println(dir);
-//        String dir = filePath.getFileName().toString();
-
+//        System.out.println(dir); //todo log4j
         File file = new File(dir);
         for (File f : file.listFiles()) {
-            System.out.println(f.getName());
-            list.add(f.getName());
-        }
-
-    }
-
-    final File folder = new File("/home/you/Desktop");
-//    listFilesForFolder(folder);
-
-    public void listFilesForFolder(final File folder) {
-        for (final File fileEntry : folder.listFiles()) {
-            if (fileEntry.isDirectory()) {
-                listFilesForFolder(fileEntry);
-            } else {
-                System.out.println(fileEntry.getName());
-            }
+//            System.out.println(f.getName());
+            list.add("F" + " | " + f.getName());
         }
     }
+
 
 
 
