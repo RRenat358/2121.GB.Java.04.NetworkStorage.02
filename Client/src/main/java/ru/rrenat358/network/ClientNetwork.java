@@ -9,6 +9,7 @@ import io.netty.handler.codec.serialization.ObjectEncoder;
 import io.netty.handler.codec.string.StringDecoder;
 import ru.rrenat358.Command;
 import ru.rrenat358.ConfigConst;
+import ru.rrenat358.controllers.MainController;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,6 +30,9 @@ public class ClientNetwork {
     private final String host;
     private final int port;
 
+//    MainController mainController = new MainController();
+    MainController mainController;
+
     public ClientNetwork() {
         this(HOST, PORT);
     }
@@ -39,6 +43,8 @@ public class ClientNetwork {
     }
 
 
+
+/*
     public void sendFile() throws InterruptedException, IOException {
         File file = new File(clientDataUserPath + fileName01);
         System.out.println("Файл захвачен для отправки: \n" + file.getPath());
@@ -49,6 +55,21 @@ public class ClientNetwork {
             System.out.println("respons = " + respons);
         });
 
+//        mainController.getFilesTable().getItems().add(fileName01);
+
+    }
+*/
+
+    public void sendFile(String fileName) throws InterruptedException, IOException {
+        File file = new File(clientDataUserPath + fileName);
+        System.out.println("Файл захвачен для отправки: \n" + file.getPath());
+
+        Command command = new Command("put", file, Files.readAllBytes(file.toPath()));
+
+        new ClientNetwork(HOST, PORT).sendCommand(command, (respons) -> {
+            System.out.println("respons = " + respons);
+        });
+//        mainController.getFilesTable().getItems().add(fileName01);
     }
 
 
