@@ -23,6 +23,8 @@ public class MainController {
 
     private static final String fileName01 = "userFile01.txt";
 
+
+
     private ClientNetwork clientNetwork = new ClientNetwork();
 
     public void sendButton(ActionEvent actionEvent) throws IOException, InterruptedException {
@@ -57,4 +59,8 @@ public class MainController {
     public void setFilesTable(TableView filesTable) {
         this.filesTable = filesTable;
     }
+
+
+
+
 }

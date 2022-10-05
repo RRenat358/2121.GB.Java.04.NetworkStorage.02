@@ -10,10 +10,13 @@ import java.io.IOException;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 
 public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
 
     private static final String serverDataUserPath = ConfigConst.SERVER_REPO;
+
+    private List<String> list;
 
 
     @Override
@@ -49,6 +52,7 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         System.out.println("ServerHandler exception");
         cause.printStackTrace();
+        ctx.close();
     }
 
 
