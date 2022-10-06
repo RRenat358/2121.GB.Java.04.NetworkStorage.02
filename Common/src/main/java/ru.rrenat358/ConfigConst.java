@@ -15,7 +15,7 @@ public class ConfigConst {
 
 
     //Client
-    public static String CLIENT_TITLE ="<<= Cloud Client =>>";
+    public static String CLIENT_TITLE ="= Cloud Client =";
     public static String CLIENT_REPO = "Client/DataUser/";
 
 

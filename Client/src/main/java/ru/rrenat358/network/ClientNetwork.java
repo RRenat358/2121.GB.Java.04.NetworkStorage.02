@@ -75,7 +75,6 @@ public class ClientNetwork {
 
     private void sendCommand(Command command, Consumer<String> callback) throws InterruptedException {
         EventLoopGroup workerGroup = new NioEventLoopGroup();
-
         try {
             Bootstrap client = new Bootstrap();
             client.group(workerGroup);
@@ -97,7 +96,6 @@ public class ClientNetwork {
         } finally {
             workerGroup.shutdownGracefully();
         }
-
     }
 
 

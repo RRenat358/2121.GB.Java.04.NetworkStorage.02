@@ -42,5 +42,6 @@ public class ClientNetworkHandler extends SimpleChannelInboundHandler<String> {
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         System.out.println("ClientHandler exception");
         cause.printStackTrace();
+        ctx.close();
     }
 }
