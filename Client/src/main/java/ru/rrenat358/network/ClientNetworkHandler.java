@@ -28,17 +28,20 @@ public class ClientNetworkHandler extends SimpleChannelInboundHandler<String> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, String s) throws Exception {
+        System.out.println(s);
         callback.accept(s);
+
     }
 
     @Override
     public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
-        System.out.println("ClientHandler. channelUnregistered = " + ctx.channel().remoteAddress());
+        System.out.println("ClientNetworkHandler. channelUnregistered = " + ctx.channel().remoteAddress());
     }
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         System.out.println("ClientHandler exception");
         cause.printStackTrace();
+        ctx.close();
     }
 }

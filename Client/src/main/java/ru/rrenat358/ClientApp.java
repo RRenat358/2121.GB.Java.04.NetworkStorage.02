@@ -25,6 +25,7 @@ public class ClientApp extends Application {
 
         Parent scene = fxmlLoader.load();
         clientStage.setScene(new Scene(scene, 640, 480));
+        clientStage.setTitle(ConfigConst.CLIENT_TITLE);
 
 
         clientStage.show();
