@@ -26,25 +26,7 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Command command) throws Exception {
         System.out.println("command = " + command);
         if (command.getCommand().equals("put")) {
-
-            Path root = Path.of(serverDataUserPath);
-            Files.createDirectories(root);
-            Path filePath = root.resolve(command.getFile().getPath());
-            System.out.println("Файл получен и будет сохранён: \n" + filePath);
-
-            Files.createDirectories(filePath.getParent());
-            try {
-                Files.createFile(filePath);
-            } catch (FileAlreadyExistsException ignored) {
-                // do nothing
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Files.write(filePath, command.getData());
-
-            String dir = String.valueOf(filePath.getParent());
-            updateFileList(dir);
-
+            readCommand_File(command);
         }
         list.forEach(System.out::println);
 
@@ -90,6 +72,27 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
     }
 
 
+    private void readCommand_File(Command command) throws IOException {
+
+        Path root = Path.of(serverDataUserPath);
+        Files.createDirectories(root);
+        Path filePath = root.resolve(command.getFile().getPath());
+        System.out.println("Файл получен и будет сохранён: \n" + filePath);
+
+        Files.createDirectories(filePath.getParent());
+        try {
+            Files.createFile(filePath);
+        } catch (FileAlreadyExistsException ignored) {
+            // do nothing
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Files.write(filePath, command.getData());
+
+        String dir = String.valueOf(filePath.getParent());
+        updateFileList(dir);
+
+    }
 
 
 
