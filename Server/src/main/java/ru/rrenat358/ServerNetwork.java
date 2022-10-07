@@ -14,10 +14,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.nio.charset.StandardCharsets;
 
-//@Log4j2
+@Log4j2
 public class ServerNetwork {
-
-    private static final Logger logger = LogManager.getLogger(ServerNetwork.class);
 
 //    private static final String HOST = "localhost";
 //    private static final int PORT = 13581;
@@ -33,13 +31,9 @@ public class ServerNetwork {
     private final int port;
 
     public static void main(String[] args) throws InterruptedException {
-//        log.info("infooo111");
-//        log.debug("debugggg111");
-        logger.info("infooo111");
-        logger.debug("debugggg111");
         new ServerNetwork(PORT).startServer();
-//        log.info("infooo222");
-//        log.debug("debugggg222");
+
+
     }
 
     public ServerNetwork() {
@@ -76,6 +70,7 @@ public class ServerNetwork {
                     );
                 }
             });
+            log.debug("Server start. PORT:{}", PORT);
             ChannelFuture channelFuture = server.bind(PORT).sync();
             channelFuture.channel().closeFuture().sync();
         } finally {
@@ -83,6 +78,7 @@ public class ServerNetwork {
             bossGroup.shutdownGracefully();
         }
 
+        log.debug("Server start {}", PORT);
     }
 
 

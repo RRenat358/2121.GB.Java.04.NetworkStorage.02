@@ -29,7 +29,7 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Command command) throws Exception {
-        System.out.println("command = " + command);
+        log.debug("command = " + command);
         if (command.getCommand().equals("put")) {
             readCommand_File(command);
         }
@@ -66,13 +66,17 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
     }
 
 
-
     private void updateFileList(String dir) {
 //        System.out.println(dir); //todo log4j
         File file = new File(dir);
         for (File f : file.listFiles()) {
 //            System.out.println(f.getName());
             list.add("F" + " | " + f.getName());
+//            log.info("infooo111");
+//            log.debug("debugggg111");
+//            logger.info("infooo111");
+//            logger.debug("debugggg111");
+
         }
     }
 
@@ -98,7 +102,6 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
         updateFileList(dir);
 
     }
-
 
 
 }
