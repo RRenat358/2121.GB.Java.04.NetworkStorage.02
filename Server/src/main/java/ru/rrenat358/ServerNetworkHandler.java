@@ -5,6 +5,9 @@ import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
+import lombok.extern.log4j.Log4j2;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +18,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Log4j2
 public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
+    private static final Logger logger = LogManager.getLogger(ServerNetworkHandler.class);
 
     private static final String serverDataUserPath = ConfigConst.SERVER_REPO;
 

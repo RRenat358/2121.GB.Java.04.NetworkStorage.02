@@ -8,11 +8,16 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import lombok.extern.log4j.Log4j2;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.nio.charset.StandardCharsets;
 
-
+//@Log4j2
 public class ServerNetwork {
+
+    private static final Logger logger = LogManager.getLogger(ServerNetwork.class);
 
 //    private static final String HOST = "localhost";
 //    private static final int PORT = 13581;
@@ -28,7 +33,13 @@ public class ServerNetwork {
     private final int port;
 
     public static void main(String[] args) throws InterruptedException {
+//        log.info("infooo111");
+//        log.debug("debugggg111");
+        logger.info("infooo111");
+        logger.debug("debugggg111");
         new ServerNetwork(PORT).startServer();
+//        log.info("infooo222");
+//        log.debug("debugggg222");
     }
 
     public ServerNetwork() {

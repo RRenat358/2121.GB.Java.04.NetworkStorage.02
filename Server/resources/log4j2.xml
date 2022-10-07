@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!--
 <Configuration>
     <Properties>
         <Property name="basePath">logs</Property>
@@ -11,19 +12,50 @@
         </File>
 
         <Console name="STDOUT" target="SYSTEM_OUT">
-<!--            <PatternLayout pattern="%-5p %d{yyyy-MM-dd HH:mm:ss} [%t] %C (%F:%L) - %m %n" />-->
-<!--            <PatternLayout pattern="%-5p %m %-30p|  %F:%L %n" />-->
+&lt;!&ndash;            <PatternLayout pattern="%-5p %d{yyyy-MM-dd HH:mm:ss} [%t] %C (%F:%L) - %m %n" />&ndash;&gt;
+&lt;!&ndash;            <PatternLayout pattern="%-5p %m %-30p|  %F:%L %n" />&ndash;&gt;
             <PatternLayout pattern="%-5p %m %n" />
         </Console>
     </Appenders>
 
     <Loggers>
         <Logger name="ru.rrenat358" />
-        <Root level="info">
-<!--        <Root level="debug">-->
+&lt;!&ndash;        <Root level="info">&ndash;&gt;
+        <Root level="debug">
             <AppenderRef ref="STDOUT" />
             <AppenderRef ref="FILE" />
         </Root>
     </Loggers>
 </Configuration>
+-->
 
+<Configuration>
+    <!-- Секция аппендеров -->
+    <Appenders>
+        <!-- Файловый аппендер -->
+        <File name="file" fileName="log.log">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m %ex%n</Pattern>
+            </PatternLayout>
+        </File>
+        <!-- Файловый аппендер -->
+        <File name="file2" fileName="log2.log">
+            <!-- Фильтр по маркеру -->
+            <MarkerFilter marker="fileonly" onMatch="DENY" onMismatch="ACCEPT"/>
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m %ex%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <!-- Секция логгеров -->
+    <Loggers>
+        <!-- Корневой логгер -->
+        <Root level="trace">
+            <AppenderRef ref="file" level="DEBUG"/>
+        </Root>
+        <!-- Логгер нашего класса -->
+        <Logger name="logging.log4j.LoggingLog4j" level="info" additivity="false">
+            <AppenderRef ref="file2" level="INFO"/>
+        </Logger>
+    </Loggers>
+</Configuration>
