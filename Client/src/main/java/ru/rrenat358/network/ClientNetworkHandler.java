@@ -3,10 +3,12 @@ package ru.rrenat358.network;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
+import lombok.extern.log4j.Log4j2;
 import ru.rrenat358.Command;
 
 import java.util.function.Consumer;
 
+@Log4j2
 public class ClientNetworkHandler extends SimpleChannelInboundHandler<String> {
 
     private Command command;
@@ -28,19 +30,19 @@ public class ClientNetworkHandler extends SimpleChannelInboundHandler<String> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, String s) throws Exception {
-        System.out.println(s);
+        log.debug(s);
         callback.accept(s);
 
     }
 
     @Override
     public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
-        System.out.println("ClientNetworkHandler. channelUnregistered = " + ctx.channel().remoteAddress());
+        log.debug("ClientNetworkHandler. channelUnregistered = " + ctx.channel().remoteAddress());
     }
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        System.out.println("ClientHandler exception");
+        log.debug("ClientHandler exception");
         cause.printStackTrace();
         ctx.close();
     }
