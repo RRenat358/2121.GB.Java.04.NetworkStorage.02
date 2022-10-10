@@ -60,22 +60,18 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        System.out.println("ServerHandler exception");
+        log.error("ServerHandler exception");
         cause.printStackTrace();
         ctx.close();
     }
 
 
     private void updateFileList(String dir) {
-//        System.out.println(dir); //todo log4j
+        log.debug(dir);
         File file = new File(dir);
         for (File f : file.listFiles()) {
-//            System.out.println(f.getName());
+            log.debug(f.getName());
             list.add("F" + " | " + f.getName());
-//            log.info("infooo111");
-//            log.debug("debugggg111");
-//            logger.info("infooo111");
-//            logger.debug("debugggg111");
 
         }
     }
@@ -86,7 +82,7 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
         Path root = Path.of(serverDataUserPath);
         Files.createDirectories(root);
         Path filePath = root.resolve(command.getFile().getPath());
-        System.out.println("Файл получен и будет сохранён: \n" + filePath);
+        log.debug("Файл получен и будет сохранён: \n" + filePath);
 
         Files.createDirectories(filePath.getParent());
         try {
