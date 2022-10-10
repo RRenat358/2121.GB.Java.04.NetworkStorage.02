@@ -15,8 +15,8 @@ import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+
 
 @Log4j2
 public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
@@ -33,7 +33,8 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
         if (command.getCommand().equals("put")) {
             readCommand_File(command);
         }
-        list.forEach(System.out::println);
+//        list.forEach(System.out::println);
+        log.debug(list.listIterator());
 
         ChannelFuture channelFuture = channelHandlerContext.writeAndFlush(
 //                String.format("Server: Файл получен: \n%s", command.getFile().getName())

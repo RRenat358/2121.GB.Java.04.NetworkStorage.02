@@ -18,7 +18,8 @@
         <Console name="STDOUT" target="SYSTEM_OUT">
 <!--            <PatternLayout pattern="%-5p %d{yyyy-MM-dd HH:mm:ss} [%t] %C (%F:%L) - %m %n" />-->
 <!--            <PatternLayout pattern="%-5p %m %-30p|  %F:%L %n" />-->
-            <PatternLayout pattern="%-5p %m %n" />
+<!--            <PatternLayout pattern="%-5p %m %n" />-->
+            <PatternLayout pattern="%m %n" />
         </Console>
     </Appenders>
 

@@ -7,10 +7,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import lombok.extern.log4j.Log4j2;
 import ru.rrenat358.network.ClientNetwork;
 
 import java.io.IOException;
 
+
+@Log4j2
 public class MainController {
 
     @FXML
@@ -28,7 +31,7 @@ public class MainController {
     private ClientNetwork clientNetwork = new ClientNetwork();
 
     public void sendButton(ActionEvent actionEvent) throws IOException, InterruptedException {
-        System.out.println("sendButton >>> pressed");
+        log.debug("sendButton >>> pressed");
         clientNetwork.sendFile(fileName01);
 
         //todo ??

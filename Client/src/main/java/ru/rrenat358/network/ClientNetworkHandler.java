@@ -8,6 +8,7 @@ import ru.rrenat358.Command;
 
 import java.util.function.Consumer;
 
+
 @Log4j2
 public class ClientNetworkHandler extends SimpleChannelInboundHandler<String> {
 
