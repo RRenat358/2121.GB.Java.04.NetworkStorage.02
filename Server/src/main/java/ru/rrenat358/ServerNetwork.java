@@ -9,13 +9,17 @@ import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import lombok.extern.log4j.Log4j2;
+import org.apache.logging.log4j.Level;
+
 import java.nio.charset.StandardCharsets;
+
+//import static ru.rrenat358.ConfigConst.logStartApp;
 
 
 @Log4j2
 public class ServerNetwork {
 
-//    private static final String HOST = "localhost";
+    //    private static final String HOST = "localhost";
 //    private static final int PORT = 13581;
     private static final String HOST = ConfigConst.HOST;
     private static final int PORT = ConfigConst.PORT;
@@ -29,14 +33,8 @@ public class ServerNetwork {
     private final int port;
 
     public static void main(String[] args) throws InterruptedException {
-
-        log.error("ERROR ---");
-        log.info("INFO --------");
-        log.debug("DEBUG ---------------------- \n");
-        log.trace("TRACE --------------------------------------------------------");
-
+        ConfigConst.logStartApp();
         new ServerNetwork(PORT).startServer();
-
     }
 
     public ServerNetwork() {
@@ -83,6 +81,22 @@ public class ServerNetwork {
         }
     }
 
+/*
+    public static void logStartApp() {
+        log.fatal("\n");
+        log.fatal("==============================");
+        log.fatal("=== Start App ================");
+        log.fatal("==============================");
+        log.log(Level.FATAL,"LogLevel == FATAL");
+        log.log(Level.ERROR,"LogLevel == ERROR");
+        log.log(Level.INFO,"LogLevel == INFO");
+        log.log(Level.DEBUG,"LogLevel == DEBUG");
+        log.log(Level.TRACE,"LogLevel == TRACE");
+        log.log(Level.ALL,"LogLevel == ALL");
+        log.log(Level.FATAL,"LogLevel ==  ↑ ");
+        log.fatal("==============================\n");
+    }
+*/
 
 
 

@@ -18,11 +18,12 @@
 
 
     <Loggers>
+        <Root level="error">
 <!--        <Root level="info">-->
 <!--        <Root level="debug">-->
-        <Root level="trace">
+<!--        <Root level="trace">-->
             <AppenderRef ref="STDOUT" level="debug"/>
-            <AppenderRef ref="FILE" level="debug"/>
+            <AppenderRef ref="FILE" level="error"/>
         </Root>
 
         <Logger name="io.netty" level="error"/>

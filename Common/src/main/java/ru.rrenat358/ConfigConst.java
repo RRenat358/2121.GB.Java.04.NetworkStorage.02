@@ -1,7 +1,10 @@
 package ru.rrenat358;
 
 
+import lombok.extern.log4j.Log4j2;
+import org.apache.logging.log4j.Level;
 
+@Log4j2
 public class ConfigConst {
 
     private ConfigConst() { // Prevents instantiation
@@ -27,6 +30,21 @@ public class ConfigConst {
 
     public static final int MAXIMUM_OBJECT_SIZE = 1024 * 1024 * 10;
 
+
+    public static void logStartApp() {
+        log.fatal("\n");
+        log.fatal("==============================");
+        log.fatal("=== Start App ================");
+        log.fatal("==============================");
+        log.log(Level.FATAL,"LogLevel == FATAL");
+        log.log(Level.ERROR,"LogLevel == ERROR");
+        log.log(Level.INFO,"LogLevel == INFO");
+        log.log(Level.DEBUG,"LogLevel == DEBUG");
+        log.log(Level.TRACE,"LogLevel == TRACE");
+        log.log(Level.ALL,"LogLevel == ALL");
+        log.log(Level.FATAL,"LogLevel ==  ↑ ");
+        log.fatal("==============================\n");
+    }
 
 
 }
