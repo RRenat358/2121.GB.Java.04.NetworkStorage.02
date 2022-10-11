@@ -3,37 +3,29 @@
 <Configuration>
     <Properties>
         <Property name="basePath">logs</Property>
-
     </Properties>
 
-<!--    <param name="MaxFileSize" value="1MB" />-->
-    <param name="MaxFileSize" value="1b"/>
-    <param name="MaxBackupIndex" value="1"/>
-
     <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <!--            <PatternLayout pattern="%-5p %d{yyyy-MM-dd HH:mm:ss} [%t] %C (%F:%L) - %m %n" />-->
+            <PatternLayout pattern="%m %n"/>
+        </Console>
+
         <File name="FILE" fileName="${basePath}/Server.log" append="true">
             <PatternLayout pattern="%-5p %d{yyyy-MM-dd HH:mm:ss} [%t] %C (%F:%L) - %m %n"/>
         </File>
-
-        <Console name="STDOUT" target="SYSTEM_OUT">
-<!--            <PatternLayout pattern="%-5p %d{yyyy-MM-dd HH:mm:ss} [%t] %C (%F:%L) - %m %n" />-->
-<!--            <PatternLayout pattern="%-5p %m %-30p|  %F:%L %n" />-->
-<!--            <PatternLayout pattern="%-5p %m %n" />-->
-            <PatternLayout pattern="%m %n"/>
-        </Console>
     </Appenders>
+
 
     <Loggers>
 <!--        <Root level="info">-->
 <!--        <Root level="debug">-->
-<!--        <Root level="trace">-->
-        <Root level="all">
+        <Root level="trace">
             <AppenderRef ref="STDOUT" level="debug"/>
             <AppenderRef ref="FILE" level="debug"/>
         </Root>
 
         <Logger name="io.netty" level="error"/>
-
     </Loggers>
 
 </Configuration>

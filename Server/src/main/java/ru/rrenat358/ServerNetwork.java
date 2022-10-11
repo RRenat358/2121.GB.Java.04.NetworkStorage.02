@@ -29,8 +29,13 @@ public class ServerNetwork {
     private final int port;
 
     public static void main(String[] args) throws InterruptedException {
-        new ServerNetwork(PORT).startServer();
 
+        log.error("ERROR ---");
+        log.info("INFO --------");
+        log.debug("DEBUG ---------------------- \n");
+        log.trace("TRACE --------------------------------------------------------");
+
+        new ServerNetwork(PORT).startServer();
 
     }
 
@@ -69,15 +74,16 @@ public class ServerNetwork {
                 }
             });
             log.debug("Server start. PORT:{}", PORT);
+
             ChannelFuture channelFuture = server.bind(PORT).sync();
             channelFuture.channel().closeFuture().sync();
         } finally {
             workGroup.shutdownGracefully();
             bossGroup.shutdownGracefully();
         }
-
-        log.debug("Server start {}", PORT);
     }
+
+
 
 
 }
