@@ -34,17 +34,10 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
         }
         log.debug(list);
 
-
         ChannelFuture channelFuture = channelHandlerContext.writeAndFlush(
                 String.format("Server: Файл получен: \n%s", command.getFile().getName())
-//                String.format("Server: Файл получен: ")
-//                String.format("list.stream().iterator()")
-//                String.format("list.stream().iterator()", command.getFile().getName())
         );
-//        log.debug("Файл сохранён: \n" + command.getFile().getName());
         channelFuture.addListener(ChannelFutureListener.CLOSE);
-
-
     }
 
 
@@ -56,15 +49,6 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
     }
 
 
-    private void updateFileList(String dir) {
-        log.debug(dir);
-        File file = new File(dir);
-        for (File f : file.listFiles()) {
-            log.debug(f.getName());
-            list.add("F" + " | " + f.getName());
-
-        }
-    }
 
 
     private void readCommand_File(Command command) throws IOException {
@@ -88,6 +72,19 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
         updateFileList(dir);
 
     }
+
+
+    private void updateFileList(String dir) {
+        log.debug(dir);
+        File file = new File(dir);
+        for (File f : file.listFiles()) {
+            log.debug(f.getName());
+            list.add("F" + " | " + f.getName());
+
+        }
+    }
+
+
 
 
 }
