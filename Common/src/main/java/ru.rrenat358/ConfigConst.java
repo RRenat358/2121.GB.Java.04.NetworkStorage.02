@@ -4,6 +4,7 @@ package ru.rrenat358;
 import lombok.extern.log4j.Log4j2;
 import org.apache.logging.log4j.Level;
 
+
 @Log4j2
 public class ConfigConst {
 
@@ -27,10 +28,10 @@ public class ConfigConst {
     //Server
     public static String SERVER_REPO = "Server/DataUser/";
 
-
     public static final int MAXIMUM_OBJECT_SIZE = 1024 * 1024 * 10;
 
 
+    //Other common
     public static void logStartApp() {
         log.fatal("\n");
         log.fatal("==============================");
@@ -43,8 +44,9 @@ public class ConfigConst {
         log.log(Level.TRACE,"LogLevel == TRACE");
         log.log(Level.ALL,"LogLevel == ALL");
         log.log(Level.FATAL,"LogLevel ==  ↑ ");
-        log.fatal("==============================\n");
+        log.fatal("==============================\n\n\n");
     }
+
 
 
 }

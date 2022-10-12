@@ -81,22 +81,6 @@ public class ServerNetwork {
         }
     }
 
-/*
-    public static void logStartApp() {
-        log.fatal("\n");
-        log.fatal("==============================");
-        log.fatal("=== Start App ================");
-        log.fatal("==============================");
-        log.log(Level.FATAL,"LogLevel == FATAL");
-        log.log(Level.ERROR,"LogLevel == ERROR");
-        log.log(Level.INFO,"LogLevel == INFO");
-        log.log(Level.DEBUG,"LogLevel == DEBUG");
-        log.log(Level.TRACE,"LogLevel == TRACE");
-        log.log(Level.ALL,"LogLevel == ALL");
-        log.log(Level.FATAL,"LogLevel ==  ↑ ");
-        log.fatal("==============================\n");
-    }
-*/
 
 
 
