@@ -23,7 +23,8 @@
 <!--        <Root level="debug">-->
 <!--        <Root level="trace">-->
             <AppenderRef ref="STDOUT" level="debug"/>
-            <AppenderRef ref="FILE" level="error"/>
+<!--            <AppenderRef ref="FILE" level="error"/>-->
+            <AppenderRef ref="FILE" level="debug"/>
         </Root>
 
         <Logger name="io.netty" level="error"/>

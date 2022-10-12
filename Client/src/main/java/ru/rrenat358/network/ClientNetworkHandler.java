@@ -31,7 +31,8 @@ public class ClientNetworkHandler extends SimpleChannelInboundHandler<String> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, String s) throws Exception {
-        log.debug(s);
+        log.debug(s + "<====== channelRead0()");
+        System.out.println(s);
         callback.accept(s);
 
     }

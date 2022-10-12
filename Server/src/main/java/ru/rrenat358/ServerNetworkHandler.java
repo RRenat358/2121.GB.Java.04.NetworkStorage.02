@@ -20,7 +20,6 @@ import java.util.List;
 
 @Log4j2
 public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
-    private static final Logger logger = LogManager.getLogger(ServerNetworkHandler.class);
 
     private static final String serverDataUserPath = ConfigConst.SERVER_REPO;
 
@@ -33,27 +32,17 @@ public class ServerNetworkHandler extends SimpleChannelInboundHandler<Command> {
         if (command.getCommand().equals("put")) {
             readCommand_File(command);
         }
-//        list.forEach(System.out::println);
-        log.debug(list.listIterator());
+        log.debug(list);
+
 
         ChannelFuture channelFuture = channelHandlerContext.writeAndFlush(
-//                String.format("Server: Файл получен: \n%s", command.getFile().getName())
+                String.format("Server: Файл получен: \n%s", command.getFile().getName())
 //                String.format("Server: Файл получен: ")
 //                String.format("list.stream().iterator()")
-                "list.stream().iterator()"
+//                String.format("list.stream().iterator()", command.getFile().getName())
         );
-//        System.out.println("Файл сохранён: \n" + command.getFile().getName());
+//        log.debug("Файл сохранён: \n" + command.getFile().getName());
         channelFuture.addListener(ChannelFutureListener.CLOSE);
-
-//        list.forEach(System.out::println);
-
-
-/*
-        ChannelFuture channelFuture2 = channelHandlerContext.writeAndFlush(
-                "list.forEach...."
-        );
-        channelFuture2.addListener(ChannelFutureListener.CLOSE);
-*/
 
 
     }

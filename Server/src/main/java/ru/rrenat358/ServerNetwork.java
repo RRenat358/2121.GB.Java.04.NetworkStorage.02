@@ -9,11 +9,9 @@ import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import lombok.extern.log4j.Log4j2;
-import org.apache.logging.log4j.Level;
 
 import java.nio.charset.StandardCharsets;
 
-//import static ru.rrenat358.ConfigConst.logStartApp;
 
 
 @Log4j2
