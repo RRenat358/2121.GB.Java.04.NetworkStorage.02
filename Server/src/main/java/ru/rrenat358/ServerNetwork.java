@@ -8,13 +8,16 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import lombok.extern.log4j.Log4j2;
 
 import java.nio.charset.StandardCharsets;
 
 
+
+@Log4j2
 public class ServerNetwork {
 
-//    private static final String HOST = "localhost";
+    //    private static final String HOST = "localhost";
 //    private static final int PORT = 13581;
     private static final String HOST = ConfigConst.HOST;
     private static final int PORT = ConfigConst.PORT;
@@ -28,6 +31,7 @@ public class ServerNetwork {
     private final int port;
 
     public static void main(String[] args) throws InterruptedException {
+        ConfigConst.logStartApp();
         new ServerNetwork(PORT).startServer();
     }
 
@@ -65,14 +69,17 @@ public class ServerNetwork {
                     );
                 }
             });
+            log.debug("Server start. PORT:{}", PORT);
+
             ChannelFuture channelFuture = server.bind(PORT).sync();
             channelFuture.channel().closeFuture().sync();
         } finally {
             workGroup.shutdownGracefully();
             bossGroup.shutdownGracefully();
         }
-
     }
+
+
 
 
 }

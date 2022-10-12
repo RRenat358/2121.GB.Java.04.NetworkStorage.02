@@ -7,6 +7,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 import io.netty.handler.codec.string.StringDecoder;
+import lombok.extern.log4j.Log4j2;
 import ru.rrenat358.Command;
 import ru.rrenat358.ConfigConst;
 import ru.rrenat358.controllers.MainController;
@@ -18,6 +19,7 @@ import java.nio.file.Files;
 import java.util.function.Consumer;
 
 
+@Log4j2
 public class ClientNetwork {
 
     private static final String HOST = ConfigConst.HOST;
@@ -47,12 +49,12 @@ public class ClientNetwork {
 /*
     public void sendFile() throws InterruptedException, IOException {
         File file = new File(clientDataUserPath + fileName01);
-        System.out.println("Файл захвачен для отправки: \n" + file.getPath());
+        log.debug("Файл захвачен для отправки: \n" + file.getPath());
 
         Command command = new Command("put", file, Files.readAllBytes(file.toPath()));
 
         new ClientNetwork(HOST, PORT).sendCommand(command, (respons) -> {
-            System.out.println("respons = " + respons);
+            log.debug("respons = " + respons);
         });
 
 //        mainController.getFilesTable().getItems().add(fileName01);
@@ -62,12 +64,12 @@ public class ClientNetwork {
 
     public void sendFile(String fileName) throws InterruptedException, IOException {
         File file = new File(clientDataUserPath + fileName);
-        System.out.println("Файл захвачен для отправки: \n" + file.getPath());
+        log.debug("Файл захвачен для отправки: \n" + file.getPath());
 
         Command command = new Command("put", file, Files.readAllBytes(file.toPath()));
 
         new ClientNetwork(HOST, PORT).sendCommand(command, (respons) -> {
-            System.out.println("respons = " + respons);
+            log.debug("respons = " + respons);
         });
 //        mainController.getFilesTable().getItems().add(fileName01);
     }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration>
+    <Properties>
+        <Property name="basePath">logs</Property>
+
+    </Properties>
+
+<!--    <param name="MaxFileSize" value="1MB" />-->
+    <param name="MaxFileSize" value="1b" />
+    <param name="MaxBackupIndex" value="1" />
+
+    <Appenders>
+        <File name="FILE" fileName="${basePath}/Client.log" append="true">
+            <PatternLayout pattern="%-5p %d{yyyy-MM-dd HH:mm:ss} [%t] %C (%F:%L) - %m %n" />
+        </File>
+
+        <Console name="STDOUT" target="SYSTEM_OUT">
+<!--            <PatternLayout pattern="%-5p %d{yyyy-MM-dd HH:mm:ss} [%t] %C (%F:%L) - %m %n" />-->
+<!--            <PatternLayout pattern="%-5p %m %-30p|  %F:%L %n" />-->
+<!--            <PatternLayout pattern="%-5p %m %n" />-->
+            <PatternLayout pattern="%m %n" />
+        </Console>
+    </Appenders>
+
+    <Loggers>
+<!--        <Logger name="ru.rrenat358" />-->
+        <Logger name="io.netty" level="info" />
+
+<!--        <Root level="info">-->
+        <Root level="debug">
+            <AppenderRef ref="STDOUT" />
+            <AppenderRef ref="FILE" />
+        </Root>
+
+    </Loggers>
+</Configuration>
+
