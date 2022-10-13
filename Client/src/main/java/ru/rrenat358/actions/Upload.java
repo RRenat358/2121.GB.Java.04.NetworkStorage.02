@@ -14,6 +14,7 @@ import ru.geekbrains.cloud.client.service.FileService;
 import ru.geekbrains.cloud.common.messages.list.FileInfo;
 import ru.rrenat358.controllers.MainController;
 import ru.rrenat358.network.ClientNetwork;
+import ru.rrenat358.ClientApp;
 
 import java.io.File;
 import java.util.List;
@@ -28,9 +29,10 @@ public class Upload {
     TextField pathField = mainController.getPathField();
     ClientNetwork clientNetwork = mainController.getClientNetwork();
 
-    File file = fileChooser.showOpenDialog(ClientApplication.getPrimaryStage());
+    File file = fileChooser.showOpenDialog(ClientApp.getClientStage());
 
     if (file != null) {
+
       List<FileInfo> list = filesTable.getItems();
       for (FileInfo fi : list) {
         if (file.getName().equals(fi.getFileName())) {
@@ -40,8 +42,8 @@ public class Upload {
           if (option.isPresent()) {
             if (option.get() == ButtonType.OK) {
               log.info("File chosen: " + file.getPath());
-              controller.showProgressBar();
-              FileService.sendFile(clientNetwork.getChannelFuture().channel(), file, pathField.getText(), controller);
+//              mainController.showProgressBar();
+              FileService.sendFile(clientNetwork.getChannelFuture().channel(), file, pathField.getText(), mainController);
               return;
             }
             if (option.get() == ButtonType.CANCEL) {
@@ -52,8 +54,8 @@ public class Upload {
       }
 
       log.info("File chosen: " + file.getPath());
-      controller.showProgressBar();
-      FileService.sendFile(clientNetwork.getChannelFuture().channel(), file, pathField.getText(), controller);
+//      mainController.showProgressBar();
+      FileService.sendFile(clientNetwork.getChannelFuture().channel(), file, pathField.getText(), mainController);
     }
   }
 }
