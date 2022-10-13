@@ -54,15 +54,11 @@ public class ClientNetwork {
     public void sendFile() throws InterruptedException, IOException {
         File file = new File(clientDataUserPath + fileName01);
         log.debug("Файл захвачен для отправки: \n" + file.getPath());
-
         Command command = new Command("put", file, Files.readAllBytes(file.toPath()));
-
         new ClientNetwork(HOST, PORT).sendCommand(command, (respons) -> {
             log.debug("respons = " + respons);
         });
-
 //        mainController.getFilesTable().getItems().add(fileName01);
-
     }
 */
 
