@@ -7,6 +7,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 import io.netty.handler.codec.string.StringDecoder;
+import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 import ru.rrenat358.Command;
 import ru.rrenat358.ConfigConst;
@@ -20,6 +21,7 @@ import java.util.function.Consumer;
 
 
 @Log4j2
+@Getter
 public class ClientNetwork {
 
     private static final String HOST = ConfigConst.HOST;
@@ -31,6 +33,8 @@ public class ClientNetwork {
 
     private final String host;
     private final int port;
+
+    private ChannelFuture channelFuture;
 
 //    MainController mainController = new MainController();
     MainController mainController;
@@ -93,8 +97,8 @@ public class ClientNetwork {
                     );
                 }
             });
-            ChannelFuture future = client.connect(HOST, PORT).sync();
-            future.channel().closeFuture().sync();
+            channelFuture = client.connect(HOST, PORT).sync();
+            channelFuture.channel().closeFuture().sync();
         } finally {
             workerGroup.shutdownGracefully();
         }
