@@ -1,24 +1,14 @@
 package ru.rrenat358.actions;
 
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import lombok.extern.log4j.Log4j2;
-import ru.geekbrains.cloud.client.javafx.ClientApplication;
-import ru.geekbrains.cloud.client.javafx.Controller;
-import ru.geekbrains.cloud.client.netty.NettyClient;
-import ru.geekbrains.cloud.client.service.FileService;
-import ru.geekbrains.cloud.common.messages.list.FileInfo;
-import ru.rrenat358.controllers.MainController;
-import ru.rrenat358.network.ClientNetwork;
 import ru.rrenat358.ClientApp;
+import ru.rrenat358.controllers.MainController;
+import ru.rrenat358.handlers.FileService;
+import ru.rrenat358.network.ClientNetwork;
 
 import java.io.File;
-import java.util.List;
-import java.util.Optional;
 
 @Log4j2
 public class Upload {
@@ -33,6 +23,8 @@ public class Upload {
 
     if (file != null) {
 
+/*
+      //Проверяем, существует ли файл
       List<FileInfo> list = filesTable.getItems();
       for (FileInfo fi : list) {
         if (file.getName().equals(fi.getFileName())) {
@@ -52,6 +44,7 @@ public class Upload {
           }
         }
       }
+*/
 
       log.info("File chosen: " + file.getPath());
 //      mainController.showProgressBar();
