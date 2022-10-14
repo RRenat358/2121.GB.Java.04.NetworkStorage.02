@@ -36,8 +36,8 @@ public class ClientNetwork implements Runnable{
     private static final String fileName01 = "userFile01.txt";
 
 
-    private final String host;
-    private final int port;
+    private String host = null;
+    private int port = 0;
 
     private ChannelFuture channelFuture;
 
@@ -81,7 +81,7 @@ public class ClientNetwork implements Runnable{
                             socketChannel.pipeline().addLast(
                                     new ObjectDecoder(ConfigConst.MAXIMUM_OBJECT_SIZE, ClassResolvers.cacheDisabled(null)),
                                     new ObjectEncoder(),
-                                    new NettyClientHandler(controller));
+                                    new ClientNetworkHandler(mainController));
                         }
                     });
             channelFuture = b.connect(HOST, PORT).sync();
