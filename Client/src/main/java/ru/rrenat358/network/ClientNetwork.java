@@ -27,7 +27,7 @@ import java.util.function.Consumer;
 
 @Log4j2
 @Getter
-public class ClientNetwork implements Runnable{
+public class ClientNetwork implements Runnable {
 
     private static final String HOST = ConfigConst.HOST;
     private static final int PORT = ConfigConst.PORT;
@@ -41,8 +41,8 @@ public class ClientNetwork implements Runnable{
 
     private ChannelFuture channelFuture;
 
-//    MainController mainController = new MainController();
-    MainController mainController;
+    //    MainController mainController = new MainController();
+    private MainController mainController;
     private CountDownLatch countDownLatch;
 
 

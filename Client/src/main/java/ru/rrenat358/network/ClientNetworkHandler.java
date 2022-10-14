@@ -16,6 +16,8 @@ public class ClientNetworkHandler extends SimpleChannelInboundHandler<String> {
     private Command command;
     private Consumer<String> callback;
 
+    private MainController mainController;
+
     public ClientNetworkHandler() {
     }
 
@@ -25,6 +27,7 @@ public class ClientNetworkHandler extends SimpleChannelInboundHandler<String> {
     }
 
     public ClientNetworkHandler(MainController mainController) {
+        this.mainController = mainController;
     }
 
 
@@ -39,6 +42,13 @@ public class ClientNetworkHandler extends SimpleChannelInboundHandler<String> {
         callback.accept(s);
 
     }
+
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) {
+        ClientRequestHandler handler = ClientHandlerRegistry.getHandler(msg.getClass());
+        handler.handle(ctx, msg, controller);
+    }
+
 
     @Override
     public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
