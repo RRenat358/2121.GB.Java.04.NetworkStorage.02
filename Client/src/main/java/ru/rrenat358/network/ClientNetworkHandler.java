@@ -6,6 +6,8 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.log4j.Log4j2;
 import ru.rrenat358.Command;
 import ru.rrenat358.controllers.MainController;
+import ru.rrenat358.handlers.ClientHandlerRegistry;
+import ru.rrenat358.handlers.ClientRequestHandler;
 
 import java.util.function.Consumer;
 
@@ -46,7 +48,7 @@ public class ClientNetworkHandler extends SimpleChannelInboundHandler<String> {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
         ClientRequestHandler handler = ClientHandlerRegistry.getHandler(msg.getClass());
-        handler.handle(ctx, msg, controller);
+        handler.handle(ctx, msg, mainController);
     }
 
 
