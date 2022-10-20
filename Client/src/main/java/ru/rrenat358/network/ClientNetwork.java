@@ -103,8 +103,6 @@ public class ClientNetwork implements Runnable {
     }
 
 
-
-
 /*
     public void sendFile() throws InterruptedException, IOException {
         File file = new File(clientDataUserPath + fileName01);
