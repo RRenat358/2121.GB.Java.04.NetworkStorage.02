@@ -15,7 +15,7 @@ public class ClientApp extends Application {
 
 
     @Getter
-    private Stage clientStage;
+    private static Stage clientStage;
 
     @Override
     public void start(Stage stage) throws Exception {

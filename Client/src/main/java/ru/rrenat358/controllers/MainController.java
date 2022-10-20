@@ -7,13 +7,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
+import ru.rrenat358.actions.Upload;
 import ru.rrenat358.network.ClientNetwork;
 
 import java.io.IOException;
 
 
 @Log4j2
+@Getter
 public class MainController {
 
     @FXML
@@ -23,6 +27,7 @@ public class MainController {
     public ListView filesList;
 
 
+    private final FileChooser fileChooser = new FileChooser();
 
     private static final String fileName01 = "userFile01.txt";
 
@@ -44,6 +49,9 @@ public class MainController {
 
     }
 
+    public void uploadAction() {
+        Upload.action(this);
+    }
 
 
     public TextField getPathField() {

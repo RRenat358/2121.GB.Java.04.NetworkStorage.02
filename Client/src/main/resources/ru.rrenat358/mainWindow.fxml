@@ -30,12 +30,13 @@
         <ListView fx:id="filesList" prefHeight="210.0" prefWidth="248.0"/>
 
         <HBox spacing="5">
-            <!--         <Button text="Upload" focusTraversable="false" HBox.hgrow="ALWAYS" maxWidth="Infinity" onAction="#uploadAction"/>-->
+            <Button text="Upload" focusTraversable="false" HBox.hgrow="ALWAYS" maxWidth="Infinity"
+                    onAction="#uploadAction"/>
             <!--         <Button text="Download" focusTraversable="false" HBox.hgrow="ALWAYS" maxWidth="Infinity" onAction="#downloadAction"/>-->
             <!--         <Button text="Delete" focusTraversable="false" HBox.hgrow="ALWAYS" maxWidth="Infinity" onAction="#deleteAction"/>-->
             <!--         <Button text="Make directory" focusTraversable="false" HBox.hgrow="ALWAYS" maxWidth="Infinity" onAction="#makeDirectory"/>-->
-            <Button fx:id="sendButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#sendButton"
-                    text="sendButton.sendFile() &gt;&gt;▶"/>
+            <Button fx:id="sendButton" text="sendButton.sendFile() &gt;&gt;▶" contentDisplay="CENTER"
+                    mnemonicParsing="false" onAction="#sendButton"/>
 
 
             <padding>
