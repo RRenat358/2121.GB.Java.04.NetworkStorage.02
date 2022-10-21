@@ -8,6 +8,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
@@ -32,6 +33,8 @@ public class MainController {
 
     private static final String fileName01 = "userFile01.txt";
     public GridPane authPane;
+    public VBox cloudPane
+            ;
 
 
     private ClientNetwork clientNetwork = new ClientNetwork();
