@@ -23,6 +23,7 @@ public class ClientApp extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(ClientApp.class.getResource("/ru.rrenat358/mainWindow.fxml"));
+        fxmlLoader.setLocation(ClientApp.class.getResource("/ru.rrenat358/client-view.fxml"));
 
         Parent scene = fxmlLoader.load();
         clientStage.setScene(new Scene(scene, 640, 480));
