@@ -3,10 +3,7 @@ package ru.rrenat358.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
@@ -33,8 +30,15 @@ public class MainController {
 
     private static final String fileName01 = "userFile01.txt";
     public GridPane authPane;
-    public VBox cloudPane
-            ;
+    public VBox cloudPane;
+    public TextField authLogin;
+    public PasswordField authPassword;
+    public Label authMessage;
+    public GridPane regPane;
+    public TextField regLogin;
+    public PasswordField regPassword;
+    public PasswordField regPasswordRep;
+    public Label regMessage;
 
 
     private ClientNetwork clientNetwork = new ClientNetwork();
@@ -90,5 +94,21 @@ public class MainController {
 
     public void pathUpAction(ActionEvent actionEvent) {
 
+    }
+
+    public void enterCloud(ActionEvent actionEvent) {
+        
+    }
+
+    public void changeStageToReg(ActionEvent actionEvent) {
+        
+        
+    }
+
+    public void register(ActionEvent actionEvent) {
+        
+    }
+
+    public void changeStageToAuth(ActionEvent actionEvent) {
     }
 }
