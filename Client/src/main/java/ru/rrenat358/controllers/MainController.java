@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
@@ -30,7 +31,7 @@ public class MainController {
     private final FileChooser fileChooser = new FileChooser();
 
     private static final String fileName01 = "userFile01.txt";
-
+    public GridPane authPane;
 
 
     private ClientNetwork clientNetwork = new ClientNetwork();
@@ -72,6 +73,19 @@ public class MainController {
     }
 
 
+    public void downloadAction(ActionEvent actionEvent) {
 
+    }
 
+    public void deleteAction(ActionEvent actionEvent) {
+
+    }
+
+    public void makeDirectory(ActionEvent actionEvent) {
+
+    }
+
+    public void pathUpAction(ActionEvent actionEvent) {
+
+    }
 }
