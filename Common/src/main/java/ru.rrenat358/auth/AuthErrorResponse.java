@@ -1,6 +1,7 @@
 package ru.rrenat358.auth;
 
-import ru.geekbrains.cloud.common.messages.abs.ServerErrorResponse;
+
+import ru.rrenat358.abstractClass.ServerErrorResponse;
 
 
 public class AuthErrorResponse extends ServerErrorResponse {
