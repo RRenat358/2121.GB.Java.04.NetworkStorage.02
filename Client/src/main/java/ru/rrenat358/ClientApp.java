@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
+import ru.rrenat358.Config.ConfigConst;
 
 @Log4j2
 public class ClientApp extends Application {
@@ -22,7 +23,8 @@ public class ClientApp extends Application {
         this.clientStage = stage;
 
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(ClientApp.class.getResource("/ru.rrenat358/mainWindow.fxml"));
+//        fxmlLoader.setLocation(ClientApp.class.getResource("/ru.rrenat358/mainWindow.fxml"));
+        fxmlLoader.setLocation(ClientApp.class.getResource("/ru.rrenat358/client-view.fxml"));
 
         Parent scene = fxmlLoader.load();
         clientStage.setScene(new Scene(scene, 640, 480));

@@ -12,9 +12,9 @@ import io.netty.handler.codec.serialization.ObjectEncoder;
 import io.netty.handler.codec.string.StringDecoder;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
-import ru.rrenat358.AbstractMessage;
+import ru.rrenat358.abstractClass.AbstractMessage;
 import ru.rrenat358.Command;
-import ru.rrenat358.ConfigConst;
+import ru.rrenat358.Config.ConfigConst;
 import ru.rrenat358.controllers.MainController;
 
 import java.io.File;
@@ -101,8 +101,6 @@ public class ClientNetwork implements Runnable {
             }
         });
     }
-
-
 
 
 /*
