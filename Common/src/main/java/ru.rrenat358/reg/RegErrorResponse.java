@@ -1,6 +1,6 @@
 package ru.rrenat358.reg;
 
-import ru.rrenat358.reg.abstractClass.ServerErrorResponse;
+import ru.rrenat358.abstractClass.ServerErrorResponse;
 
 public class RegErrorResponse extends ServerErrorResponse {
 

@@ -1,6 +1,6 @@
 package ru.rrenat358.reg;
 
-import ru.rrenat358.reg.abstractClass.AbstractMessage;
+import ru.rrenat358.abstractClass.AbstractMessage;
 
 public class RegSuccessResponse extends AbstractMessage {
 

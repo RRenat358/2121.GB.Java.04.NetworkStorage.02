@@ -1,7 +1,7 @@
 package ru.rrenat358.auth;
 
 
-import ru.rrenat358.reg.abstractClass.ServerErrorResponse;
+import ru.rrenat358.abstractClass.ServerErrorResponse;
 
 
 public class AuthErrorResponse extends ServerErrorResponse {

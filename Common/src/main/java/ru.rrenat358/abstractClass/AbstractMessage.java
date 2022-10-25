@@ -1,4 +1,4 @@
-package ru.rrenat358.reg.abstractClass;
+package ru.rrenat358.abstractClass;
 
 import java.io.Serializable;
 
