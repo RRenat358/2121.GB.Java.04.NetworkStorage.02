@@ -6,7 +6,7 @@ import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.log4j.Log4j2;
-import ru.rrenat358.Config.ConfigConst;
+import ru.rrenat358.config.ConfigConst;
 
 import java.io.File;
 import java.io.IOException;
