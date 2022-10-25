@@ -2,9 +2,8 @@ package ru.rrenat358.handlers;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
-import javafx.application.Platform;
 import lombok.extern.log4j.Log4j2;
-import ru.rrenat358.FileMessage;
+import ru.rrenat358.file.FileMessage;
 import ru.rrenat358.controllers.MainController;
 
 import java.io.File;
