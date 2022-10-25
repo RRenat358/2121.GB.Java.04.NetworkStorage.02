@@ -1,4 +1,4 @@
-package ru.rrenat358.abstractClass;
+package ru.rrenat358.reg.abstractClass;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

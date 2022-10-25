@@ -1,6 +1,6 @@
 package ru.rrenat358.handlers;
 
-import ru.rrenat358.abstractClass.AbstractMessage;
+import ru.rrenat358.reg.abstractClass.AbstractMessage;
 
 import java.util.Collections;
 import java.util.HashMap;
