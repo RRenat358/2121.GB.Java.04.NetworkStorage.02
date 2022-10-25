@@ -1,4 +1,4 @@
-package ru.rrenat358.Config;
+package ru.rrenat358.config;
 
 
 import lombok.extern.log4j.Log4j2;

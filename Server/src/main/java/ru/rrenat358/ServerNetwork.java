@@ -9,7 +9,7 @@ import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import lombok.extern.log4j.Log4j2;
-import ru.rrenat358.Config.ConfigConst;
+import ru.rrenat358.config.ConfigConst;
 
 import java.nio.charset.StandardCharsets;
 
