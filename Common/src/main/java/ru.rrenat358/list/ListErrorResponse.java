@@ -1,6 +1,6 @@
 package ru.rrenat358.list;
 
-import ru.geekbrains.cloud.common.messages.abs.ServerErrorResponse;
+import ru.rrenat358.abstractClass.ServerErrorResponse;
 
 public class ListErrorResponse extends ServerErrorResponse {
 
