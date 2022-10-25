@@ -1,7 +1,7 @@
 package ru.rrenat358.reg;
 
 import lombok.Value;
-import ru.geekbrains.cloud.common.messages.abs.AbstractMessage;
+import ru.rrenat358.reg.abstractClass.AbstractMessage;
 
 @Value
 public class RegRequest extends AbstractMessage {

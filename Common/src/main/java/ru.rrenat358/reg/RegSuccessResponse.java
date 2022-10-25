@@ -1,6 +1,6 @@
 package ru.rrenat358.reg;
 
-import ru.geekbrains.cloud.common.messages.abs.AbstractMessage;
+import ru.rrenat358.reg.abstractClass.AbstractMessage;
 
 public class RegSuccessResponse extends AbstractMessage {
 
