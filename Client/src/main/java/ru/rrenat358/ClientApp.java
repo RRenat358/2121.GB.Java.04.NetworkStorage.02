@@ -13,8 +13,6 @@ import ru.rrenat358.Config.ConfigConst;
 @Log4j2
 public class ClientApp extends Application {
 
-
-
     @Getter
     private static Stage clientStage;
 
