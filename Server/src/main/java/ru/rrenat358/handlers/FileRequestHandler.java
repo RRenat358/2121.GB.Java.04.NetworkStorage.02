@@ -24,9 +24,9 @@ public class FileRequestHandler implements ServerRequestHandler {
     String fileName = fileRequest.getFileName();
     String path = fileRequest.getPath();
 
-    Path absolutePath = Paths.get(Const.SERVER_REP, path, fileName).toAbsolutePath();
+    Path absolutePath = Paths.get(ConfigConst.SERVER_REPO, path, fileName).toAbsolutePath();
     File file = new File(absolutePath.toString());
 
-    clientService.sendFile(ctx.channel(), file, Const.CLIENT_REP);
+    clientService.sendFile(ctx.channel(), file, ConfigConst.CLIENT_REPO);
   }
 }
