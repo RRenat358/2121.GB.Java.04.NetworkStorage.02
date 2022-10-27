@@ -1,14 +1,14 @@
 package ru.rrenat358.handlers;
 
-import ru.geekbrains.cloud.common.messages.abs.AbstractMessage;
-import ru.geekbrains.cloud.common.messages.auth.AuthRequest;
-import ru.geekbrains.cloud.common.messages.file.DeleteRequest;
-import ru.geekbrains.cloud.common.messages.file.FileMessage;
-import ru.geekbrains.cloud.common.messages.file.FileRequest;
-import ru.geekbrains.cloud.common.messages.file.MakeDirRequest;
-import ru.geekbrains.cloud.common.messages.list.ListRequest;
-import ru.geekbrains.cloud.common.messages.reg.RegRequest;
-import ru.geekbrains.cloud.server.netty.NettyServer;
+import ru.rrenat358.abstractClass.AbstractMessage;
+import ru.rrenat358.auth.AuthRequest;
+import ru.rrenat358.file.DeleteRequest;
+import ru.rrenat358.file.FileMessage;
+import ru.rrenat358.file.FileRequest;
+import ru.rrenat358.file.MakeDirRequest;
+import ru.rrenat358.list.ListRequest;
+import ru.rrenat358.reg.RegRequest;
+import ru.rrenat358.NettyServer;
 
 import java.util.Collections;
 import java.util.HashMap;
