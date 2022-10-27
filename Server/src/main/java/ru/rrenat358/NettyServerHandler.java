@@ -3,9 +3,9 @@ package ru.rrenat358;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import lombok.extern.log4j.Log4j2;
-import ru.geekbrains.cloud.server.handlers.ServerHandlerRegistry;
-import ru.geekbrains.cloud.server.handlers.ServerRequestHandler;
-import ru.geekbrains.cloud.server.service.ClientService;
+import ru.rrenat358.handlers.ServerHandlerRegistry;
+import ru.rrenat358.handlers.ServerRequestHandler;
+import ru.rrenat358.service.ClientService;
 
 @Log4j2
 public class NettyServerHandler extends ChannelInboundHandlerAdapter {
