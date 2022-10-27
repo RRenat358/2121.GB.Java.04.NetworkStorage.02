@@ -2,7 +2,7 @@ package ru.rrenat358.handlers;
 
 import io.netty.channel.ChannelHandlerContext;
 import lombok.extern.log4j.Log4j2;
-import ru.geekbrains.cloud.common.constants.Const;
+import ru.rrenat358.config.ConfigConst;
 import ru.rrenat358.file.FileMessage;
 import ru.rrenat358.service.ClientService;
 
@@ -23,7 +23,7 @@ public class FileUploadHandler implements ServerRequestHandler {
 
     boolean append = fileMessage.partNumber != 1;
 
-    try (FileOutputStream fos = new FileOutputStream(Paths.get(Const.SERVER_REP, fileMessage.path, fileMessage.filename).toString(), append)) {
+    try (FileOutputStream fos = new FileOutputStream(Paths.get(ConfigConst.SERVER_REPO, fileMessage.path, fileMessage.filename).toString(), append)) {
 
       log.info(ctx.name() + ": File " + fileMessage.filename + " part " + fileMessage.partNumber + " / " + fileMessage.partsCount + " received");
       fos.write(fileMessage.data);
