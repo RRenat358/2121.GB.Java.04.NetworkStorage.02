@@ -6,7 +6,7 @@ import lombok.extern.log4j.Log4j2;
 import ru.rrenat358.auth.AuthErrorResponse;
 import ru.rrenat358.auth.AuthRequest;
 import ru.rrenat358.auth.AuthSuccessResponse;
-import ru.rrenat358.server.db.AuthService;
+import ru.rrenat358.service.AuthService;
 import ru.rrenat358.service.ClientService;
 
 @Log4j2
