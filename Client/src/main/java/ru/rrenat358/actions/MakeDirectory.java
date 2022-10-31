@@ -1,4 +1,4 @@
-package ru.rrenat358.actions;
+ShowProgressBarpackage ru.rrenat358.actions;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
