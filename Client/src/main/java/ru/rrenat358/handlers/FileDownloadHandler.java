@@ -5,7 +5,7 @@ import javafx.application.Platform;
 import lombok.extern.log4j.Log4j2;
 import ru.rrenat358.Controller;
 import ru.geekbrains.cloud.common.constants.Const;
-import ru.geekbrains.cloud.common.messages.file.FileMessage;
+import ru.rrenat358.file.FileMessage;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
