@@ -1,4 +1,4 @@
-ShowProgressBarpackage ru.rrenat358.actions;
+package ru.rrenat358.actions;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import lombok.extern.log4j.Log4j2;
 import ru.rrenat358.ClientApplication;
 import ru.rrenat358.Controller;
-import ru.rrenat358.NettyClient;
+import ru.rrenat358.network.NettyClient;
 import ru.rrenat358.file.MakeDirRequest;
 
 import java.nio.file.Paths;

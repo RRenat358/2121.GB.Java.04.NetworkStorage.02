@@ -12,8 +12,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import ru.rrenat358.actions.*;
-import ru.rrenat358.NettyClient;
-import ru.rrenat358.Const;
+import ru.rrenat358.network.NettyClient;
+import ru.rrenat358.config.ConfigConst;
 import ru.rrenat358.auth.AuthRequest;
 import ru.rrenat358.list.FileInfo;
 import ru.rrenat358.list.FileInfo.FileType;
@@ -208,7 +208,7 @@ public class Controller implements Initializable {
   }
 
   private void createRepositoryFolder() {
-    File folder = new File(Const.CLIENT_REP);
+    File folder = new File(ConfigConst.CLIENT_REPO);
     if (!folder.exists()) {
       folder.mkdir();
       System.out.println("Folder " + folder.getName() + " created");
