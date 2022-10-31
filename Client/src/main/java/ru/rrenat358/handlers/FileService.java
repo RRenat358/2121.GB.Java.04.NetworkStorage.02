@@ -3,8 +3,8 @@ package ru.rrenat358.handlers;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import lombok.extern.log4j.Log4j2;
+import ru.rrenat358.Controller;
 import ru.rrenat358.file.FileMessage;
-import ru.rrenat358.controllers.MainController;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,7 +14,7 @@ import java.util.Arrays;
 @Log4j2
 public class FileService {
 
-  public static void sendFile(Channel channel, File file, String path, MainController mainController) {
+  public static void sendFile(Channel channel, File file, String path, Controller mainController) {
     new Thread(() -> {
       try {
         int bufSize = 1024 * 1024 * 5;
