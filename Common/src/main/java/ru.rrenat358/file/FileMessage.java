@@ -1,10 +1,11 @@
 package ru.rrenat358.file;
 
 
-import java.io.Serializable;
+import ru.rrenat358.abstractClass.AbstractMessage;
 
 
-public class FileMessage /*extends AbstractMessage*/implements Serializable {
+
+public class FileMessage extends AbstractMessage {
     public String filename;
     public String path;
     public int partNumber;
