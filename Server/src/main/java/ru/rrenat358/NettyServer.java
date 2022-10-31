@@ -11,7 +11,7 @@ import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 import lombok.extern.log4j.Log4j2;
-import ru.geekbrains.cloud.common.constants.Const;
+import ru.rrenat358.config.ConfigConst;
 import ru.rrenat358.server.db.AuthService;
 
 @Log4j2
@@ -39,13 +39,13 @@ public class NettyServer {
             @Override
             protected void initChannel(SocketChannel socketChannel) {
               socketChannel.pipeline().addLast(
-                  new ObjectDecoder(Const.MAXIMUM_OBJECT_SIZE, ClassResolvers.cacheDisabled(null)),
+                  new ObjectDecoder(ConfigConst.MAXIMUM_OBJECT_SIZE, ClassResolvers.cacheDisabled(null)),
                   new ObjectEncoder(),
                   new NettyServerHandler()
               );
             }
           });
-      channelFuture = b.bind(Const.PORT).sync();
+      channelFuture = b.bind(ConfigConst.PORT).sync();
       channelFuture.channel().closeFuture().sync();
     } finally {
       workerGroup.shutdownGracefully();
