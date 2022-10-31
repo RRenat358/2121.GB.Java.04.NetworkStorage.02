@@ -6,7 +6,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import lombok.extern.log4j.Log4j2;
-import ru.geekbrains.cloud.client.javafx.Controller;
+import ru.rrenat358.Controller;
 import ru.rrenat358.NettyClient;
 import ru.rrenat358.file.DeleteRequest;
 import ru.rrenat358.list.FileInfo;

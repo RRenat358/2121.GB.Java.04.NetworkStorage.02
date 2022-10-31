@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import lombok.extern.log4j.Log4j2;
 import ru.rrenat358.Controller;
 import ru.rrenat358.NettyClient;
-import ru.geekbrains.cloud.common.constants.Const;
+import ru.rrenat358.config.ConfigConst;
 import ru.rrenat358.file.FileRequest;
 import ru.rrenat358.list.FileInfo;
 import ru.rrenat358.list.FileInfo.FileType;
@@ -38,7 +38,7 @@ public class Download {
       return;
     }
 
-    File file = new File(Paths.get(Const.CLIENT_REP, fileInfo.getFileName()).toString());
+    File file = new File(Paths.get(ConfigConst.CLIENT_REPO, fileInfo.getFileName()).toString());
 
     if (file.exists()) {
       Alert alert = new Alert(AlertType.CONFIRMATION, "File already exists, overwrite?");

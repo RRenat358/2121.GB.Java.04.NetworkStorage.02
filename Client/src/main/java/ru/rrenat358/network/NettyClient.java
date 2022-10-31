@@ -13,8 +13,8 @@ import io.netty.handler.codec.serialization.ObjectEncoder;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 import ru.rrenat358.Controller;
-import ru.geekbrains.cloud.common.constants.Const;
-import ru.rrenat358.abs.AbstractMessage;
+import ru.rrenat358.config.ConfigConst;
+import ru.rrenat358.abstractClass.AbstractMessage;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -44,12 +44,12 @@ public class NettyClient implements Runnable{
             @Override
             protected void initChannel(SocketChannel socketChannel) {
               socketChannel.pipeline().addLast(
-                  new ObjectDecoder(Const.MAXIMUM_OBJECT_SIZE, ClassResolvers.cacheDisabled(null)),
+                  new ObjectDecoder(ConfigConst.MAXIMUM_OBJECT_SIZE, ClassResolvers.cacheDisabled(null)),
                   new ObjectEncoder(),
                   new NettyClientHandler(controller));
             }
           });
-      channelFuture = b.connect(Const.SERVER, Const.PORT).sync();
+      channelFuture = b.connect(ConfigConst.SERVER_REPO, ConfigConst.PORT).sync();
       countDownLatch.countDown();
       channelFuture.channel().closeFuture().sync();
     } catch (Exception e) {
