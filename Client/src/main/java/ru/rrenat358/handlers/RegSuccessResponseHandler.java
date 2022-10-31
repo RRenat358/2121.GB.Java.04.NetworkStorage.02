@@ -5,9 +5,11 @@ import javafx.application.Platform;
 import javafx.scene.paint.Color;
 import lombok.extern.log4j.Log4j2;
 import ru.rrenat358.Controller;
+import ru.rrenat358.controllers.MainController;
 
 @Log4j2
 public class RegSuccessResponseHandler implements ClientRequestHandler {
+
 
   @Override
   public void handle(ChannelHandlerContext ctx, Object msg, Controller controller) {
