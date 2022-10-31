@@ -7,9 +7,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import lombok.extern.log4j.Log4j2;
 import ru.geekbrains.cloud.client.javafx.Controller;
-import ru.geekbrains.cloud.client.netty.NettyClient;
-import ru.geekbrains.cloud.common.messages.file.DeleteRequest;
-import ru.geekbrains.cloud.common.messages.list.FileInfo;
+import ru.rrenat358.NettyClient;
+import ru.rrenat358.file.DeleteRequest;
+import ru.rrenat358.list.FileInfo;
 
 import java.nio.file.Paths;
 
