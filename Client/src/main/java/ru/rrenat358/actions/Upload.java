@@ -8,7 +8,7 @@ import javafx.stage.FileChooser;
 import lombok.extern.log4j.Log4j2;
 import ru.rrenat358.ClientApplication;
 import ru.rrenat358.Controller;
-import ru.rrenat358.handlers.FileService;
+import ru.rrenat358.handlers.service.FileService;
 import ru.rrenat358.list.FileInfo;
 import ru.rrenat358.network.NettyClient;
 
