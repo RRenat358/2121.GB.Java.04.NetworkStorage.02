@@ -5,7 +5,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import ru.rrenat358.Controller;
+import ru.rrenat358.controllers.Controller;
 import ru.rrenat358.list.FileInfo;
 
 import java.time.format.DateTimeFormatter;

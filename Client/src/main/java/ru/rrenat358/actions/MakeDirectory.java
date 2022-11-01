@@ -11,7 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import lombok.extern.log4j.Log4j2;
 import ru.rrenat358.ClientApplication;
-import ru.rrenat358.Controller;
+import ru.rrenat358.controllers.Controller;
 import ru.rrenat358.network.NettyClient;
 import ru.rrenat358.file.MakeDirRequest;
 

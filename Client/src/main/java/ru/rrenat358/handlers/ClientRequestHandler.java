@@ -1,8 +1,7 @@
 package ru.rrenat358.handlers;
 
 import io.netty.channel.ChannelHandlerContext;
-import ru.rrenat358.Controller;
-import ru.rrenat358.controllers.MainController;
+import ru.rrenat358.controllers.Controller;
 
 public interface ClientRequestHandler {
 

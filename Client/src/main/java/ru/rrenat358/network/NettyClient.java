@@ -12,7 +12,7 @@ import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
-import ru.rrenat358.Controller;
+import ru.rrenat358.controllers.Controller;
 import ru.rrenat358.config.ConfigConst;
 import ru.rrenat358.abstractClass.AbstractMessage;
 

@@ -4,7 +4,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import ru.rrenat358.handlers.ClientHandlerRegistry;
 import ru.rrenat358.handlers.ClientRequestHandler;
-import ru.rrenat358.Controller;
+import ru.rrenat358.controllers.Controller;
 
 public class NettyClientHandler extends ChannelInboundHandlerAdapter {
 

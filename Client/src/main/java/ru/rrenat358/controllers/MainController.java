@@ -1,3 +1,4 @@
+/*
 package ru.rrenat358.controllers;
 
 
@@ -112,3 +113,4 @@ public class MainController {
     public void changeStageToAuth(ActionEvent actionEvent) {
     }
 }
+*/
