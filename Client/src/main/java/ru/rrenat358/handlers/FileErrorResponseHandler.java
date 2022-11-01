@@ -5,7 +5,7 @@ import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
-import ru.rrenat358.Controller;
+import ru.rrenat358.controllers.Controller;
 import ru.rrenat358.file.FileErrorResponse;
 
 public class FileErrorResponseHandler implements ClientRequestHandler{

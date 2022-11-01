@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.rrenat358.controllers.Controller">
+<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.rrenat358.controllers.MainController">
   <VBox fx:id="cloudPane" alignment="CENTER" visible="false">
 
     <HBox>
@@ -25,6 +25,9 @@
       </padding>
     </HBox>
   </VBox>
+
+
+  <!-- ================================================== -->
   <GridPane fx:id="authPane" prefHeight="596.0" prefWidth="1039.0" visible="false">
     <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
@@ -97,6 +100,9 @@
       </font>
     </Label>
   </GridPane>
+
+
+  <!-- ================================================== -->
   <GridPane fx:id="regPane" prefHeight="596.0" prefWidth="1039.0">
     <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
@@ -181,4 +187,6 @@
       </padding>
     </Label>
   </GridPane>
+
+
 </StackPane>

@@ -10,7 +10,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import ru.rrenat358.ClientApplication;
-import ru.rrenat358.Controller;
+import ru.rrenat358.controllers.Controller;
 
 public class ShowProgressBar {
 

@@ -1,4 +1,4 @@
-package ru.rrenat358;
+package ru.rrenat358.controllers;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;

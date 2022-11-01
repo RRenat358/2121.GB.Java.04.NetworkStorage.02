@@ -3,7 +3,7 @@ package ru.rrenat358.handlers;
 import io.netty.channel.ChannelHandlerContext;
 import javafx.application.Platform;
 import lombok.extern.log4j.Log4j2;
-import ru.rrenat358.Controller;
+import ru.rrenat358.controllers.Controller;
 import ru.rrenat358.config.ConfigConst;
 import ru.rrenat358.file.FileMessage;
 
