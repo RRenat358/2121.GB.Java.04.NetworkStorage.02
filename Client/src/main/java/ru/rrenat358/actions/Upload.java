@@ -1,41 +1,44 @@
 package ru.rrenat358.actions;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import lombok.extern.log4j.Log4j2;
-import ru.rrenat358.ClientApp;
-import ru.rrenat358.controllers.MainController;
+import ru.rrenat358.ClientApplication;
+import ru.rrenat358.Controller;
 import ru.rrenat358.handlers.FileService;
-import ru.rrenat358.network.ClientNetwork;
+import ru.rrenat358.list.FileInfo;
+import ru.rrenat358.network.NettyClient;
 
 import java.io.File;
+import java.util.List;
+import java.util.Optional;
 
 @Log4j2
 public class Upload {
 
-  public static void action(MainController mainController) {
-    FileChooser fileChooser = mainController.getFileChooser();
-//    TableView<FileInfo> filesTable = mainController.getFilesTable();
-    TextField pathField = mainController.getPathField();
-    ClientNetwork clientNetwork = mainController.getClientNetwork();
+  public static void action(Controller controller) {
+    FileChooser fileChooser = controller.getFileChooser();
+    TableView<FileInfo> filesTable = controller.getFilesTable();
+    TextField pathField = controller.getPathField();
+    NettyClient nettyClient = controller.getNettyClient();
 
-    File file = fileChooser.showOpenDialog(ClientApp.getClientStage());
+    File file = fileChooser.showOpenDialog(ClientApplication.getPrimaryStage());
 
     if (file != null) {
-
-/*
-      //Проверяем, существует ли файл
       List<FileInfo> list = filesTable.getItems();
       for (FileInfo fi : list) {
         if (file.getName().equals(fi.getFileName())) {
-          Alert alert = new Alert(AlertType.CONFIRMATION, "File already exists, overwrite?");
+          Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "File already exists, overwrite?");
           Optional<ButtonType> option = alert.showAndWait();
 
           if (option.isPresent()) {
             if (option.get() == ButtonType.OK) {
               log.info("File chosen: " + file.getPath());
-//              mainController.showProgressBar();
-              FileService.sendFile(clientNetwork.getChannelFuture().channel(), file, pathField.getText(), mainController);
+              controller.showProgressBar();
+              FileService.sendFile(nettyClient.getChannelFuture().channel(), file, pathField.getText(), controller);
               return;
             }
             if (option.get() == ButtonType.CANCEL) {
@@ -44,11 +47,10 @@ public class Upload {
           }
         }
       }
-*/
 
       log.info("File chosen: " + file.getPath());
-//      mainController.showProgressBar();
-      FileService.sendFile(clientNetwork.getChannelFuture().channel(), file, pathField.getText(), mainController);
+      controller.showProgressBar();
+      FileService.sendFile(nettyClient.getChannelFuture().channel(), file, pathField.getText(), controller);
     }
   }
 }
