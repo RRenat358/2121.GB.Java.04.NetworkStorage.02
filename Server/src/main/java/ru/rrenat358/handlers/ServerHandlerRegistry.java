@@ -1,7 +1,7 @@
 package ru.rrenat358.handlers;
 
 import ru.rrenat358.abstractClass.AbstractMessage;
-import ru.rrenat358.auth.AuthRequest;
+import ru.rrenat358.messages.auth.AuthRequest;
 import ru.rrenat358.file.DeleteRequest;
 import ru.rrenat358.file.FileMessage;
 import ru.rrenat358.file.FileRequest;

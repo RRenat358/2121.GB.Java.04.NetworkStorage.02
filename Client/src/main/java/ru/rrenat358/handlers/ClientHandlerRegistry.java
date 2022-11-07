@@ -1,8 +1,8 @@
 package ru.rrenat358.handlers;
 
 import ru.rrenat358.abstractClass.AbstractMessage;
-import ru.rrenat358.auth.AuthErrorResponse;
-import ru.rrenat358.auth.AuthSuccessResponse;
+import ru.rrenat358.messages.auth.AuthErrorResponse;
+import ru.rrenat358.messages.auth.AuthSuccessResponse;
 import ru.rrenat358.file.FileErrorResponse;
 import ru.rrenat358.file.FileMessage;
 import ru.rrenat358.list.ListResponse;

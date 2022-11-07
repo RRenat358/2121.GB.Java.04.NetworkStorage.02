@@ -1,4 +1,4 @@
-package ru.rrenat358.abs;
+package ru.rrenat358.messages.abs;
 
 import java.io.Serializable;
 

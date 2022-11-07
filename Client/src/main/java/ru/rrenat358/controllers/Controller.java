@@ -14,7 +14,7 @@ import lombok.extern.log4j.Log4j2;
 import ru.rrenat358.actions.*;
 import ru.rrenat358.network.NettyClient;
 import ru.rrenat358.config.ConfigConst;
-import ru.rrenat358.auth.AuthRequest;
+import ru.rrenat358.messages.auth.AuthRequest;
 import ru.rrenat358.list.FileInfo;
 import ru.rrenat358.list.FileInfo.FileType;
 import ru.rrenat358.list.ListRequest;

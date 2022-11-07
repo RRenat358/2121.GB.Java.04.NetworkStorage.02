@@ -1,4 +1,4 @@
-package ru.rrenat358.auth;
+package ru.rrenat358.messages.auth;
 
 import ru.geekbrains.cloud.common.messages.abs.ServerErrorResponse;
 
