@@ -6,11 +6,11 @@ import io.netty.channel.ChannelHandlerContext;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
-import ru.geekbrains.cloud.common.constants.Const;
-import ru.geekbrains.cloud.common.messages.file.FileErrorResponse;
-import ru.geekbrains.cloud.common.messages.file.FileMessage;
-import ru.geekbrains.cloud.common.messages.list.FileInfo;
-import ru.geekbrains.cloud.common.messages.list.ListResponse;
+import ru.rrenat358.constants.Const;
+import ru.rrenat358.messages.file.FileErrorResponse;
+import ru.rrenat358.messages.file.FileMessage;
+import ru.rrenat358.messages.list.FileInfo;
+import ru.rrenat358.messages.list.ListResponse;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -11,8 +11,8 @@ import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 import lombok.extern.log4j.Log4j2;
-import ru.geekbrains.cloud.common.constants.Const;
-import ru.geekbrains.cloud.server.db.AuthService;
+import ru.rrenat358.constants.Const;
+import ru.rrenat358.db.AuthService;
 
 @Log4j2
 public class NettyServer {
