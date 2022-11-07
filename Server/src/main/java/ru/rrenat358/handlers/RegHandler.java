@@ -3,11 +3,11 @@ package ru.rrenat358.handlers;
 import io.netty.channel.ChannelHandlerContext;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import ru.geekbrains.cloud.common.messages.reg.RegErrorResponse;
-import ru.geekbrains.cloud.common.messages.reg.RegRequest;
-import ru.geekbrains.cloud.common.messages.reg.RegSuccessResponse;
-import ru.geekbrains.cloud.server.db.AuthService;
-import ru.geekbrains.cloud.server.service.ClientService;
+import ru.rrenat358.messages.reg.RegErrorResponse;
+import ru.rrenat358.messages.reg.RegRequest;
+import ru.rrenat358.messages.reg.RegSuccessResponse;
+import ru.rrenat358.db.AuthService;
+import ru.rrenat358.service.ClientService;
 
 import java.sql.SQLException;
 

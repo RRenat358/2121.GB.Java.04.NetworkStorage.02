@@ -2,9 +2,9 @@ package ru.rrenat358.handlers;
 
 import io.netty.channel.ChannelHandlerContext;
 import lombok.extern.log4j.Log4j2;
-import ru.geekbrains.cloud.common.constants.Const;
-import ru.geekbrains.cloud.common.messages.file.MakeDirRequest;
-import ru.geekbrains.cloud.server.service.ClientService;
+import ru.rrenat358.constants.Const;
+import ru.rrenat358.messages.file.MakeDirRequest;
+import ru.rrenat358.service.ClientService;
 
 import java.io.File;
 import java.nio.file.Path;
