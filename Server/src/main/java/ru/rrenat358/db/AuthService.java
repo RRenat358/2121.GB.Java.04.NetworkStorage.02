@@ -3,7 +3,7 @@ package ru.rrenat358.db;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.extern.log4j.Log4j2;
-import ru.geekbrains.cloud.common.constants.Const;
+import ru.rrenat358.constants.Const;
 
 import java.io.File;
 import java.nio.file.Paths;
