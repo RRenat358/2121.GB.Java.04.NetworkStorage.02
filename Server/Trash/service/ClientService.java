@@ -6,11 +6,12 @@ import io.netty.channel.ChannelHandlerContext;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
-import ru.geekbrains.cloud.common.constants.Const;
-import ru.geekbrains.cloud.common.messages.file.FileErrorResponse;
-import ru.geekbrains.cloud.common.messages.file.FileMessage;
-import ru.geekbrains.cloud.common.messages.list.FileInfo;
-import ru.geekbrains.cloud.common.messages.list.ListResponse;
+
+import ru.rrenat358.file.FileErrorResponse;
+import ru.rrenat358.file.FileMessage;
+import ru.rrenat358.list.FileInfo;
+import ru.rrenat358.list.ListResponse;
+import ru.rrenat358.config.ConfigConst;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -65,7 +66,7 @@ public class ClientService {
   }
 
   public void sendList(ChannelHandlerContext ctx, String path) {
-    Path fullPath = Paths.get(Const.SERVER_REP, path);
+    Path fullPath = Paths.get(ConfigConst.SERVER_REPO, path);
     try {
       List<FileInfo> list = Files.list(fullPath).map(FileInfo::new).collect(Collectors.toList());
       ctx.writeAndFlush(new ListResponse(list, path)).addListener(channelFuture -> {
