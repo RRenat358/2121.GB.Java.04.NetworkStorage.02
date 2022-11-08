@@ -63,7 +63,7 @@ public class AuthService {
   }
 
   private void connect() throws SQLException {
-    connection = DriverManager.getConnection("jdbc:sqlite:DB-Server/dbUsers.db");
+    connection = DriverManager.getConnection("jdbc:sqlite:DB-Server/dbUsers.sqlite");
     statement = connection.createStatement();
   }
 
