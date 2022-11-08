@@ -1,14 +1,14 @@
 package ru.rrenat358.handlers;
 
-import ru.rrenat358.abstractClass.AbstractMessage;
-import ru.rrenat358.auth.AuthRequest;
-import ru.rrenat358.file.DeleteRequest;
-import ru.rrenat358.file.FileMessage;
-import ru.rrenat358.file.FileRequest;
-import ru.rrenat358.file.MakeDirRequest;
-import ru.rrenat358.list.ListRequest;
-import ru.rrenat358.reg.RegRequest;
-import ru.rrenat358.NettyServer;
+import ru.rrenat358.messages.abs.AbstractMessage;
+import ru.rrenat358.messages.auth.AuthRequest;
+import ru.rrenat358.messages.file.DeleteRequest;
+import ru.rrenat358.messages.file.FileMessage;
+import ru.rrenat358.messages.file.FileRequest;
+import ru.rrenat358.messages.file.MakeDirRequest;
+import ru.rrenat358.messages.list.ListRequest;
+import ru.rrenat358.messages.reg.RegRequest;
+import ru.rrenat358.netty.NettyServer;
 
 import java.util.Collections;
 import java.util.HashMap;

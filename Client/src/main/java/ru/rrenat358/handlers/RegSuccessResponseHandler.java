@@ -4,11 +4,10 @@ import io.netty.channel.ChannelHandlerContext;
 import javafx.application.Platform;
 import javafx.scene.paint.Color;
 import lombok.extern.log4j.Log4j2;
-import ru.rrenat358.controllers.Controller;
+import ru.rrenat358.javafx.Controller;
 
 @Log4j2
 public class RegSuccessResponseHandler implements ClientRequestHandler {
-
 
   @Override
   public void handle(ChannelHandlerContext ctx, Object msg, Controller controller) {

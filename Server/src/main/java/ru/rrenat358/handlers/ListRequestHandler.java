@@ -2,7 +2,7 @@ package ru.rrenat358.handlers;
 
 import io.netty.channel.ChannelHandlerContext;
 import lombok.extern.log4j.Log4j2;
-import ru.rrenat358.list.ListRequest;
+import ru.rrenat358.messages.list.ListRequest;
 import ru.rrenat358.service.ClientService;
 
 @Log4j2

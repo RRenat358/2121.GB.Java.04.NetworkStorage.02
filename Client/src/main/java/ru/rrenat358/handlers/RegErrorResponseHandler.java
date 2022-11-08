@@ -4,8 +4,8 @@ import io.netty.channel.ChannelHandlerContext;
 import javafx.application.Platform;
 import javafx.scene.paint.Color;
 import lombok.extern.log4j.Log4j2;
-import ru.rrenat358.controllers.Controller;
-import ru.rrenat358.reg.RegErrorResponse;
+import ru.rrenat358.javafx.Controller;
+import ru.rrenat358.messages.reg.RegErrorResponse;
 
 @Log4j2
 public class RegErrorResponseHandler implements ClientRequestHandler {

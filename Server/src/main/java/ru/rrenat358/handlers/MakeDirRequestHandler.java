@@ -2,8 +2,8 @@ package ru.rrenat358.handlers;
 
 import io.netty.channel.ChannelHandlerContext;
 import lombok.extern.log4j.Log4j2;
-import ru.rrenat358.config.ConfigConst;
-import ru.rrenat358.file.MakeDirRequest;
+import ru.rrenat358.constants.Const;
+import ru.rrenat358.messages.file.MakeDirRequest;
 import ru.rrenat358.service.ClientService;
 
 import java.io.File;
@@ -24,7 +24,7 @@ public class MakeDirRequestHandler implements ServerRequestHandler {
     String fileName = makeDirRequest.getFileName();
     String path = makeDirRequest.getPath();
 
-    Path absolutePath = Paths.get(ConfigConst.SERVER_REPO, path, fileName).toAbsolutePath();
+    Path absolutePath = Paths.get(Const.SERVER_REP, path, fileName).toAbsolutePath();
     File file = new File(absolutePath.toString());
 
     boolean result = file.mkdir();

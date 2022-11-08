@@ -4,8 +4,8 @@ import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import javafx.application.Platform;
 import lombok.extern.log4j.Log4j2;
-import ru.rrenat358.controllers.Controller;
-import ru.rrenat358.file.FileMessage;
+import ru.rrenat358.javafx.Controller;
+import ru.rrenat358.messages.file.FileMessage;
 
 import java.io.File;
 import java.io.FileInputStream;

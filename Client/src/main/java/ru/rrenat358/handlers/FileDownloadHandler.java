@@ -3,9 +3,9 @@ package ru.rrenat358.handlers;
 import io.netty.channel.ChannelHandlerContext;
 import javafx.application.Platform;
 import lombok.extern.log4j.Log4j2;
-import ru.rrenat358.controllers.Controller;
-import ru.rrenat358.config.ConfigConst;
-import ru.rrenat358.file.FileMessage;
+import ru.rrenat358.javafx.Controller;
+import ru.rrenat358.constants.Const;
+import ru.rrenat358.messages.file.FileMessage;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -26,7 +26,7 @@ public class FileDownloadHandler implements ClientRequestHandler {
       append = true;
     }
 
-    try (FileOutputStream fos = new FileOutputStream(Paths.get(ConfigConst.CLIENT_REPO, fileMessage.filename).toString(), append)) {
+    try (FileOutputStream fos = new FileOutputStream(Paths.get(Const.CLIENT_REP, fileMessage.filename).toString(), append)) {
       log.info(ctx.name() + ": File " + fileMessage.filename + " part " + fileMessage.partNumber + " / " + fileMessage.partsCount + " received");
       fos.write(fileMessage.data);
 

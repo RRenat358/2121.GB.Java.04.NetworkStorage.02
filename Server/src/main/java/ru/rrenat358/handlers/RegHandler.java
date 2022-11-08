@@ -3,10 +3,10 @@ package ru.rrenat358.handlers;
 import io.netty.channel.ChannelHandlerContext;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import ru.rrenat358.reg.RegErrorResponse;
-import ru.rrenat358.reg.RegRequest;
-import ru.rrenat358.reg.RegSuccessResponse;
-import ru.rrenat358.service.AuthService;
+import ru.rrenat358.messages.reg.RegErrorResponse;
+import ru.rrenat358.messages.reg.RegRequest;
+import ru.rrenat358.messages.reg.RegSuccessResponse;
+import ru.rrenat358.db.AuthService;
 import ru.rrenat358.service.ClientService;
 
 import java.sql.SQLException;
