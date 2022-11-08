@@ -1,7 +1,7 @@
 package ru.rrenat358.messages.list;
 
 import lombok.Value;
-import ru.geekbrains.cloud.common.messages.abs.AbstractMessage;
+import ru.rrenat358.messages.abs.AbstractMessage;
 
 import java.util.List;
 

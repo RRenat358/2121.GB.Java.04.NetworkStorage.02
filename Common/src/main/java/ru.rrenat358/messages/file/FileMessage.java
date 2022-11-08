@@ -1,6 +1,6 @@
 package ru.rrenat358.messages.file;
 
-import ru.geekbrains.cloud.common.messages.abs.AbstractMessage;
+import ru.rrenat358.messages.abs.AbstractMessage;
 
 public class FileMessage extends AbstractMessage {
     public String filename;

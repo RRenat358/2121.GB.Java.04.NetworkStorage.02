@@ -1,6 +1,6 @@
 package ru.rrenat358.messages.file;
 
-import ru.geekbrains.cloud.common.messages.abs.AbstractFileMessage;
+import ru.rrenat358.messages.abs.AbstractFileMessage;
 
 public class DeleteRequest extends AbstractFileMessage {
 

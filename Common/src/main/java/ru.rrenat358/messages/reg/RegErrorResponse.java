@@ -1,6 +1,6 @@
 package ru.rrenat358.messages.reg;
 
-import ru.geekbrains.cloud.common.messages.abs.ServerErrorResponse;
+import ru.rrenat358.messages.abs.ServerErrorResponse;
 
 public class RegErrorResponse extends ServerErrorResponse {
 
