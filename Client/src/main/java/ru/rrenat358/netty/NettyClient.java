@@ -12,9 +12,9 @@ import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
-import ru.geekbrains.cloud.client.javafx.Controller;
-import ru.geekbrains.cloud.common.constants.Const;
-import ru.geekbrains.cloud.common.messages.abs.AbstractMessage;
+import ru.rrenat358.javafx.Controller;
+import ru.rrenat358.constants.Const;
+import ru.rrenat358.messages.abs.AbstractMessage;
 
 import java.util.concurrent.CountDownLatch;
 

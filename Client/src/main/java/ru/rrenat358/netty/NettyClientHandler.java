@@ -2,9 +2,9 @@ package ru.rrenat358.netty;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
-import ru.geekbrains.cloud.client.handlers.ClientHandlerRegistry;
-import ru.geekbrains.cloud.client.handlers.ClientRequestHandler;
-import ru.geekbrains.cloud.client.javafx.Controller;
+import ru.rrenat358.handlers.ClientHandlerRegistry;
+import ru.rrenat358.handlers.ClientRequestHandler;
+import ru.rrenat358.javafx.Controller;
 
 public class NettyClientHandler extends ChannelInboundHandlerAdapter {
 

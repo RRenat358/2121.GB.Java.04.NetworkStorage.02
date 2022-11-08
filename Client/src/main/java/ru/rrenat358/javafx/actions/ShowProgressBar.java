@@ -9,8 +9,8 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import ru.geekbrains.cloud.client.javafx.ClientApplication;
-import ru.geekbrains.cloud.client.javafx.Controller;
+import ru.rrenat358.javafx.ClientApplication;
+import ru.rrenat358.javafx.Controller;
 
 public class ShowProgressBar {
 

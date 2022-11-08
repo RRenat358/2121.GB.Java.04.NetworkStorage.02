@@ -10,10 +10,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import lombok.extern.log4j.Log4j2;
-import ru.geekbrains.cloud.client.javafx.ClientApplication;
-import ru.geekbrains.cloud.client.javafx.Controller;
-import ru.geekbrains.cloud.client.netty.NettyClient;
-import ru.geekbrains.cloud.common.messages.file.MakeDirRequest;
+import ru.rrenat358.javafx.ClientApplication;
+import ru.rrenat358.javafx.Controller;
+import ru.rrenat358.netty.NettyClient;
+import ru.rrenat358.messages.file.MakeDirRequest;
 
 import java.nio.file.Paths;
 

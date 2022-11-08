@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.geekbrains.cloud.client.javafx.Controller">
+<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.rrenat358.javafx.Controller">
   <VBox fx:id="cloudPane" alignment="CENTER" visible="false">
 
     <HBox>
