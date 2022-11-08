@@ -1,7 +1,7 @@
 package ru.rrenat358.handlers;
 
 import io.netty.channel.ChannelHandlerContext;
-import ru.geekbrains.cloud.client.javafx.Controller;
+import ru.rrenat358.javafx.Controller;
 
 public interface ClientRequestHandler {
 

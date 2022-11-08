@@ -1,13 +1,13 @@
 package ru.rrenat358.handlers;
 
-import ru.geekbrains.cloud.common.messages.abs.AbstractMessage;
-import ru.geekbrains.cloud.common.messages.auth.AuthErrorResponse;
-import ru.geekbrains.cloud.common.messages.auth.AuthSuccessResponse;
-import ru.geekbrains.cloud.common.messages.file.FileErrorResponse;
-import ru.geekbrains.cloud.common.messages.file.FileMessage;
-import ru.geekbrains.cloud.common.messages.list.ListResponse;
-import ru.geekbrains.cloud.common.messages.reg.RegErrorResponse;
-import ru.geekbrains.cloud.common.messages.reg.RegSuccessResponse;
+import ru.rrenat358.messages.abs.AbstractMessage;
+import ru.rrenat358.messages.auth.AuthErrorResponse;
+import ru.rrenat358.messages.auth.AuthSuccessResponse;
+import ru.rrenat358.messages.file.FileErrorResponse;
+import ru.rrenat358.messages.file.FileMessage;
+import ru.rrenat358.messages.list.ListResponse;
+import ru.rrenat358.messages.reg.RegErrorResponse;
+import ru.rrenat358.messages.reg.RegSuccessResponse;
 
 import java.util.Collections;
 import java.util.HashMap;

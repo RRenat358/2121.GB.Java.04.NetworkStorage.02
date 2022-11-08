@@ -3,9 +3,9 @@ package ru.rrenat358.handlers;
 import io.netty.channel.ChannelHandlerContext;
 import javafx.application.Platform;
 import lombok.extern.log4j.Log4j2;
-import ru.geekbrains.cloud.client.javafx.Controller;
-import ru.geekbrains.cloud.common.constants.Const;
-import ru.geekbrains.cloud.common.messages.file.FileMessage;
+import ru.rrenat358.javafx.Controller;
+import ru.rrenat358.constants.Const;
+import ru.rrenat358.messages.file.FileMessage;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
